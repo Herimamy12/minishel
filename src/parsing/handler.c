@@ -27,7 +27,7 @@ int handle_token(char *str_cmd, t_token **token)
 	else if (str_cmd[i] == '>')
 		insert_token(token, new_token(output, NULL));
 	else if (str_cmd[i] == '$')
-		insert_token(token, new_token(dollar, NULL));
+		return (handle_dollar(str_cmd + i, token));
 	else if (str_cmd[i] == '|')
 		insert_token(token, new_token(pipes, NULL));
 	last = last_token(*token);
@@ -79,9 +79,8 @@ int handle_double_quote(char *str_cmd, t_token **token)
 		f = 0;
 		if (str_cmd[i] == '$')
 		{
-			i++;
+			i += handle_dollar(str_cmd + i, token);
 			f = 1;
-			insert_token(token, new_token(dollar, NULL));
 		}
 		i += extract_word(str_cmd + i, token, f);
 	}

@@ -15,7 +15,8 @@ NAME = libparser.a
 BIN = parse
 
 SRC = token.c token_util.c main.c handler_util.c handler.c s_shell.c\
-		lexer.c s_stream.c s_command_1.c s_command_2.c syntax_checker.c
+		lexer.c s_stream.c s_command_1.c s_command_2.c syntax_checker.c\
+		handler_utils.c
 
 OBJ = $(SRC:.c=.o)
 

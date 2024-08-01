@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   handler_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 08:28:05 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/07/30 08:28:41 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/08/01 09:16:48 by nirirako@         #+#    #+#             */
+/*   Updated: 2024/08/01 09:16:59 by nirirako@        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 
-int main(int c, char **v, char **env)
+int	handle_dollar(char *str_cmd, t_token **token)
 {
-	char	*str_cmd = "echo $PATH > out";
-	t_shell	*sh = new_shell(env);
-	t_command	*cmd;
+	int	i;
 
-	(void)c;
-	(void)v;
-	cmd = parse_command(str_cmd, sh);
-	print_command(cmd);
-	destroy_command(cmd);
-	destroy_shell(sh);
-	return (0);
+	i = 1;
+	insert_token(token, new_token(dollar, NULL));
+	if (str_cmd[1] == '?')
+	{
+		insert_token(token, new_token(word, ft_strdup("?")));
+		i = 2;
+	}
+	return (i);
 }

@@ -57,6 +57,8 @@ char	*ft_get_env(t_shell *sh, char *var_name)
 
 	env = sh->env;
 	var = NULL;
+	if (var_name[0] == '?')
+		return (ft_itoa(sh->exit_code));
 	while (env)
 	{
 		tmp = ft_split(env->content, '=');
