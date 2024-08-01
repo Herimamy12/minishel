@@ -74,6 +74,7 @@ int handle_double_quote(char *str_cmd, t_token **token)
 		insert_token(token, new_token(word, ft_strdup("\"")));
 		return (1);
 	}
+	insert_token(token, new_token(merge, NULL));
 	while (str_cmd[i] != '"')
 	{
 		f = 0;
@@ -84,6 +85,7 @@ int handle_double_quote(char *str_cmd, t_token **token)
 		}
 		i += extract_word(str_cmd + i, token, f);
 	}
+	insert_token(token, new_token(merge, NULL));
 	return (i + 1);
 }
 

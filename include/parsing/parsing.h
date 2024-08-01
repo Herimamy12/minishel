@@ -26,6 +26,10 @@ void	free_str_array(char **str);
 int ft_is_output_stream(t_token *token);
 int ft_is_input_stream(t_token *token);
 int	handle_dollar(char *str_cmd, t_token **token);
+int prepare_to_merge(t_token *token);
+char	*merge_tokens(t_token *token);
+void	handle_merge(t_token *token);
+void	refine_token(t_token *token);
 // handler
 int handle_token(char *str_cmd, t_token **token);
 int handle_word(char *str_cmd, t_token **token);

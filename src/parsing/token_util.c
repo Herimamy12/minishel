@@ -20,8 +20,8 @@ void	print_token(t_token *token)
 		str = "DOLLAR";
 	else if (token->type == append)
 		str = "APPEND";
-	else if (token->type == stop)
-		str = "STOP";
+	else if (token->type == merge)
+		str = "MERGE";
 	else
 		str = "undefined token";
 	printf("type: %s, value: ", str);

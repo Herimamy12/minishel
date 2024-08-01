@@ -10,18 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libparser.a
+NAME = libexecutor.a
 
-BIN = parse
+BIN = executor
 
-SRC = token.c token_util.c handler_util.c handler.c s_shell.c\
-		lexer.c s_stream.c s_command_1.c s_command_2.c syntax_checker.c\
-		handler_utils.c
-
-BIN_SRC = main.c
+SRC = main.c utility.c
 
 OBJ = $(SRC:.c=.o)
-BIN_OBJ = $(BIN_SRC:.c=.o)
 
 RM = rm -f
 
@@ -30,14 +25,16 @@ CC = gcc
 AR = ar -rc
 
 INCLUDE = ../../include/parsing/
+INCLUDE1 = ../../include/exek/
 
 LIB1 = ../../lib/libft
+LIB2 = ../parsing/
 
 CFLAGS = -Wall -Wextra -Werror
 
-IFLAGS = -I $(INCLUDE) -I $(LIB1)
+IFLAGS = -I $(INCLUDE) -I $(INCLUDE1) -I $(LIB1)
 
-LFLAGS = -L $(LIB1) -lft
+LFLAGS = -L $(LIB1) -L $(LIB2) -lparser -lft
 
 .c.o:
 	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $(<:.c=.o)
@@ -45,23 +42,29 @@ LFLAGS = -L $(LIB1) -lft
 $(NAME): $(OBJ)
 	make -C $(LIB1)
 	make -C $(LIB1) bonus
+	make -C $(LIB2)
 	$(AR) $(NAME) $(OBJ)
 
 all: $(NAME)
 
 clean:
 	make -C $(LIB1) clean
+	make -C $(LIB2) clean
 	$(RM) $(OBJ)
 
 fclean: clean
 	make -C $(LIB1) fclean
+	make -C $(LIB2) fclean
 	$(RM) $(NAME)
 	$(RM) $(BIN)
 
 re: fclean $(NAME)
 
-BIN: $(OBJ) $(BIN_OBJ)
-	$(CC) $(CFLAGS) $(IFLAGS) -o $(BIN) $(BIN_OBJ) $(OBJ) $(LFLAGS)
+BIN: $(OBJ)
+	make -C $(LIB1)
+	make -C $(LIB1) bonus
+	make -C $(LIB2)
+	$(CC) $(CFLAGS) $(IFLAGS) -o $(BIN) $(OBJ) $(LFLAGS)
 
 test: BIN
 	clear

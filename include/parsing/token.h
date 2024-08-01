@@ -14,7 +14,7 @@ enum e_token
 	word = 1, 
 	dollar = '$',
 	append = output - 40,
-	stop = 2
+	merge = 2
 };
 
 typedef struct s_token

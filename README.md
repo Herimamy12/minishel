@@ -1,3 +1,6 @@
+1 Aout 11:43
+- Ajout de quelque modification sur la partie gerant l'expansion des variables d'environnement
+- Ajout du code de base pour la partie execution
 1 Aout 09:40
 - L'expansion des variables d'environnement est maintenant geree. (commande simple et double quote)
 - Maintenant, on peut commencer la partie execution

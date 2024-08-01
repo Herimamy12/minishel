@@ -54,6 +54,7 @@ t_token	*expand_token(t_token *token, t_shell *sh)
 		}
 		token = token->next;
 	}
+	refine_token(new);
 	return (new);
 }
 
@@ -92,7 +93,6 @@ t_command	*parse_command(char *str_cmd, t_shell *sh)
 	t_command	*cmd;
 
 	old = tokenize(str_cmd);
-	print_token(old);
 	new = expand_token(old, sh);
 	if (check_syntax(new))
 	{
