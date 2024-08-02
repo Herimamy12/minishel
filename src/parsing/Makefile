@@ -51,6 +51,7 @@ all: $(NAME)
 
 clean:
 	make -C $(LIB1) clean
+	$(RM) main.o
 	$(RM) $(OBJ)
 
 fclean: clean

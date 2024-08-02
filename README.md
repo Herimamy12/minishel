@@ -8,3 +8,15 @@
 - Partie parsing presque achevee
 - Il faut imperativement verifie que les structures de donnees utilises ici ne posent pas de probleme pour l'execution
 - Par ailleur, il faut aussi gerer l'expansion de la commande $? qui n'est pas encore gerer pour l'instant
+
+/* ############################################### */
+
+Date : 02.08.2024
+- Handle command execution :
+	- input redirection (input / here doc)
+	- output redirection (output / append)
+	- pipe
+
+-Next :
+		- Testeur
+		- Need to replace the execvp with execve function

@@ -14,9 +14,11 @@ NAME = libexecutor.a
 
 BIN = executor
 
-SRC = main.c utility.c
+SRC = main.c utility.c s_data.c input_stream.c output_stream.c exek.c
+BIN_SRC = main.c
 
 OBJ = $(SRC:.c=.o)
+BIN_OBJ = $(BIN_SRC:.c=.o)
 
 RM = rm -f
 
@@ -34,7 +36,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 IFLAGS = -I $(INCLUDE) -I $(INCLUDE1) -I $(LIB1)
 
-LFLAGS = -L $(LIB1) -L $(LIB2) -lparser -lft
+LFLAGS = -L $(LIB1) -L $(LIB2) -lparser -lft -lreadline
 
 .c.o:
 	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $(<:.c=.o)
@@ -51,6 +53,7 @@ clean:
 	make -C $(LIB1) clean
 	make -C $(LIB2) clean
 	$(RM) $(OBJ)
+	$(RM) main.o
 
 fclean: clean
 	make -C $(LIB1) fclean
@@ -60,7 +63,7 @@ fclean: clean
 
 re: fclean $(NAME)
 
-BIN: $(OBJ)
+BIN: $(OBJ) $(BIN_OBJ)
 	make -C $(LIB1)
 	make -C $(LIB1) bonus
 	make -C $(LIB2)

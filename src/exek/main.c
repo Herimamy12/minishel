@@ -12,45 +12,20 @@
 
 #include "exek.h"
 
-void	ft_exec(t_shell *sh, t_command *cmd)
-{
-	char	**str_cmd;
-	char	**str_env;
-	pid_t	pid;
-
-	str_env = lst_2_str(sh->env);
-	while (cmd)
-	{
-		str_cmd = lst_2_str(cmd->args);
-		pid = fork();
-		if (pid == 0)
-		{
-			execvp(str_cmd[0], str_cmd);
-			perror("execvpe");	
-		}
-		else
-			wait(NULL);
-		free_str_array(str_cmd);
-		cmd = cmd->next;
-	}
-	free_str_array(str_env);
-}
-
 int main(int c, char **v, char **env)
 {
-	t_command	*cmd;
-	char	*s_cmd = "echo \"$?abc def abc\"";
+	char	*s_cmd = "ls > tmp | < Makefile cat -e";
 	t_shell	*sh;
+	t_data	*data;
 
 	(void)c;
 	(void)v;
 	sh = new_shell(env);
-	cmd = parse_command(s_cmd, sh);
-	if (cmd)
+	data = new_data (parse_command(s_cmd, sh), sh);
+	if (data)
 	{
-		ft_exec(sh, cmd);
-		destroy_command(cmd);
+		ft_exec(data);
+		destroy_data(data);
 	}
-	destroy_shell(sh);
 	return (0);
 }
