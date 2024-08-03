@@ -20,3 +20,9 @@ Date : 02.08.2024
 -Next :
 		- Testeur
 		- Need to replace the execvp with execve function
+
+/* ############################################### */
+Date: 03.08.2024
+- Handled temporarly ctrl + c
+- handle ctrl + v
+- Need to handle killing the child process with ctrl + c
