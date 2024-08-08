@@ -1,22 +1,35 @@
-1 Aout 11:43
-- Ajout de quelque modification sur la partie gerant l'expansion des variables d'environnement
-- Ajout du code de base pour la partie execution
-1 Aout 09:40
-- L'expansion des variables d'environnement est maintenant geree. (commande simple et double quote)
-- Maintenant, on peut commencer la partie execution
-31 Juillet 11:50
-- Partie parsing presque achevee
-- Il faut imperativement verifie que les structures de donnees utilises ici ne posent pas de probleme pour l'execution
-- Par ailleur, il faut aussi gerer l'expansion de la commande $? qui n'est pas encore gerer pour l'instant
+	Exec parts	Status
+-------------------------------
+-	Signal		OK
+-------------------------------
+-	Cmd simple	OK
+-------------------------------
+-	Builtins	KO
+-------------------------------
+/cd /unset /export a revoir
+-> execution en processus fils
+-------------------------------
 
-/* ############################################### */
+-------------------------------
+	Leaks parts	Status
+-------------------------------
+-	Signal		a faire
+-------------------------------
+-	Cmd simple	a faire
+-------------------------------
+-	Builtins	a faire
+-------------------------------
+-> Tests sur tous les leaks a refaire
+-------------------------------
 
-Date : 02.08.2024
-- Handle command execution :
-	- input redirection (input / here doc)
-	- output redirection (output / append)
-	- pipe
-
--Next :
-		- Testeur
-		- Need to replace the execvp with execve function
+-------------------------------
+	Norm parts	Status
+-------------------------------
+-	Signal		KO
+-------------------------------
+-	Cmd simple	KO
+-------------------------------
+-	Builtins	KO
+-------------------------------
+-> Norminette a gerer
+-------------------------------
