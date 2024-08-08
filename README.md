@@ -1,35 +1,43 @@
 	Exec parts	| Status
 -------------------------------
--	Signal		| OK
+	Signal		| OK
 -------------------------------
--	Cmd simple	| OK
+	Cmd simple	| OK
 -------------------------------
--	Builtins	| KO
+	Builtins	| KO
 -------------------------------
-/cd /unset /export a revoir
--> execution en processus fils
+- -> /cd /unset /export a revoir
+- -> execution en processus fils
 -------------------------------
 
+-------------------------------
+-------------------------------
+
+-------------------------------
 -------------------------------
 	Leaks parts	| Status
 -------------------------------
--	Signal		| a faire
+	Signal		| a faire
 -------------------------------
--	Cmd simple	| a faire
+	Cmd simple	| a faire
 -------------------------------
--	Builtins	| a faire
+	Builtins	| a faire
 -------------------------------
--> Tests sur tous les leaks a refaire
+- -> Tests sur tous les leaks a refaire
 -------------------------------
 
 -------------------------------
+-------------------------------
+
+-------------------------------
+-------------------------------
 	Norm parts	| Status
 -------------------------------
--	Signal		| KO
+	Signal		| KO
 -------------------------------
--	Cmd simple	| KO
+	Cmd simple	| KO
 -------------------------------
--	Builtins	| KO
+	Builtins	| KO
 -------------------------------
--> Norminette a gerer
+- -> Norminette a gerer
 -------------------------------
