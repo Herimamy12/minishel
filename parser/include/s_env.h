@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   s_env.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/23 08:21:15 by nirirako@         #+#    #+#             */
+/*   Updated: 2024/08/23 08:21:19 by nirirako@        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef S_ENV_H
+# define S_ENV_H
+# include <stdlib.h>
+# include "libft.h"
+
+typedef struct s_env_lst
+{
+	int					index;
+	char				*name;
+	char				*value;
+	struct s_env_lst	*next;
+}	t_env;
+
+t_env	*new_env(char *var_name, char *var_value, int index);
+t_env	*new_env_lst(char **env);
+t_env	*last_env(t_env *env);
+void	insert_2_env_lst(char *var_name, char *var_value, int index,
+			t_env **env);
+void	destroy_env(t_env *env);
+void	remove_from_env_lst(char *var_name, t_env **env);
+void	destroy_env_lst(t_env *env);
+char	*get_env_var_value(t_env *env, char *var_value);
+void	print_env(t_env *env);
+t_list	*env_2_lst(t_env *env);
+int		set_env_var(char *var_name, char *new_value, t_env *env);
+#endif
