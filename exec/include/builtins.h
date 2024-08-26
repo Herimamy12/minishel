@@ -32,4 +32,5 @@ int		handle_env(t_shell *sh);
 int		handle_unset(t_shell *sh, char **tmp);
 int		handle_export(t_shell *sh, char	**var);
 int		handle_pwd(void);
+int		handle_echo(char **av);
 #endif

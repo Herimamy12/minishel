@@ -30,11 +30,46 @@ int	handle_unset(t_shell *sh, char **tmp)
 	}
 	return (EXIT_SUCCESS);
 }
+
 int	handle_pwd(void)
 {
 	char	buff[1000];
 
 	getcwd(buff, 1000);
 	printf("%s\n", buff);
+	return (EXIT_SUCCESS);
+}
+
+int	handle_echo(char **av)
+{
+	int	i;
+
+	i = 1;
+	if (!ft_strcmp (av[1], "-n") && i++)
+	{
+		if (!av[i])
+			return (EXIT_SUCCESS);
+		while (av[i])
+		{
+			printf("%s", av[i++]);
+			if (av[i])
+				printf(" ");
+		}
+	}
+	else
+	{
+		if (!av[i])
+		{
+			printf("\n");
+			return (EXIT_SUCCESS);
+		}
+		while (av[i])
+		{
+			printf("%s", av[i++]);
+			if (av[i])
+				printf(" ");
+		}
+		printf("\n");
+	}
 	return (EXIT_SUCCESS);
 }

@@ -32,6 +32,8 @@ int	is_builtins(t_command *cmd)
 		r = env;
 	else if (ft_strcmp(cmd_name, "pwd") == 0)
 		r = pwd;
+	else if (ft_strcmp(cmd_name, "echo") == 0)
+		r = echo;
 	else
 		r = 0;
 	return (r);
@@ -53,6 +55,8 @@ int	handle_builtins(char **arg, int type, t_shell *sh)
 		r = EXIT_SUCCESS;
 	else if (type == pwd)
 		r = handle_pwd();
+	else if (type == echo)
+		r = handle_echo (arg);
 	else
 		r = EXIT_SUCCESS;
 	return (r);
