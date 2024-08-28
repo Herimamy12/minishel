@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   here_doc.c                                         :+:      :+:    :+:   */
+/*   s_here_doc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 07:30:21 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/21 07:30:30 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/08/27 08:19:08 by nirirako@         #+#    #+#             */
+/*   Updated: 2024/08/27 08:59:17 by nirirako@        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "here_doc.h"
+#include "s_here_doc.h"
 #include "utility.h"
-#include "libft.h"
 
-t_here_doc	*new_here_doc(char *lim, t_shell *sh)
+t_here_doc	*new_here_doc(char *lim)
 {
 	t_here_doc	*hd;
 
@@ -24,28 +23,19 @@ t_here_doc	*new_here_doc(char *lim, t_shell *sh)
 		report_error("Malloc error in t_here_doc\n");
 		return (NULL);
 	}
-	hd->hd_pipe = NULL;
-	hd->value = handle_here_doc(lim, sh);
+	hd->lim = ft_strdup(lim);
+	hd->pipe = new_pipe();
 	return (hd);
 }
 
 void	destroy_here_doc(t_here_doc *hd)
 {
-	if (hd->hd_pipe)
-		destroy_pipe(hd->hd_pipe);
-	destroy_string(hd->value);
+	destroy_pipe(hd->pipe);
+	free(hd->lim);
 	free(hd);
 }
 
-void	print_here_doc(t_here_doc *hd, int out_fd)
+void	print_here_doc(t_here_doc *hd)
 {
-	t_string	*string;
-
-	string = (t_string *)hd->value;
-	while (string)
-	{
-		ft_putstr_fd(string->words, out_fd);
-		ft_putstr_fd("\n", out_fd);
-		string = string->next;
-	}
+	printf("[HERE_DOC : %s]\n", hd->lim);
 }

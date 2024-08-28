@@ -72,7 +72,7 @@ void	print_token(t_token *token)
 {
 	while (token)
 	{
-		printf("[%s]", print_token_type(token));
+		printf("[%s]", print_token_type(token->type));
 		if (token->type == word || token->type == quote)
 			print_string(token->value);
 		printf("\n");

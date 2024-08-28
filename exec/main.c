@@ -14,23 +14,21 @@
 
 int	main(int argc, char **argv, char **env)
 {
-	char		*s_cmd;
-	t_shell		*sh;
-	t_command	*cmd;
-	t_data		*data;
-	t_token		*token;
+	t_shell	*sh;
+	t_data	*data;
 
 	if (!argc || !argv || !env)
 		return (1);
-	s_cmd = "< main.c << eof < exit.c cat -e";
 	sh = new_shell(env);
-	token = cmd_parser(s_cmd, sh);
-	cmd = cmd_builder(token, sh);
-	data = new_data(cmd, sh);
-	if (cmd)
-		launch_cmd(cmd, data);
-	print_command (cmd);
-	destroy_token(token);
+	data = new_data(NULL, sh);
+	while (1)
+	{
+		set_signal(SIGINT, HANDLER);
+		set_signal(SIGQUIT, IGNORE);
+		if (!cmd_executor(data))
+			break ;
+	}
+	rl_clear_history();
 	destroy_data(data);
 	return (0);
 }

@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "exec.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 void	free_str_array(char **str)
 {
@@ -75,4 +78,15 @@ void	print_str_array(char **str)
 		i++;
 	}
 	printf("\n");
+}
+
+int	is_a_directory(char *pathname)
+{
+	struct stat	st;
+
+	ft_bzero(&st, sizeof(struct stat));
+	stat(pathname, &st);
+	if (S_ISDIR(st.st_mode))
+		return (1);
+	return (0);
 }

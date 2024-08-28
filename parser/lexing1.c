@@ -72,7 +72,7 @@ static void	assemble_token(t_token *token)
 	while (token)
 	{
 		if (token->type == word && token->next && token->next->type == word)
-			link_2_bloc(token);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+			link_2_bloc(token);
 		else
 			token = token->next;
 	}

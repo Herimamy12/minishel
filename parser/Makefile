@@ -13,10 +13,10 @@ NAME = parse
 
 BIN_SRC = main.c
 
-TAR_SRC = here_doc.c lexing0.c lexing1.c parser.c s_command_1.c s_command_2.c\
+TAR_SRC = lexing0.c lexing1.c s_command1.c s_command.c s_here_doc.c\
 		  s_env.c s_pipe.c s_shell.c s_stream.c s_string.c s_string1.c\
 		  s_token.c slice.c token1.c token2.c token3.c token4.c utility.c\
-		  utility1.c sig_handler.c s_env1.c s_env2.c here_doc1.c lexing2.c\
+		  utility1.c sig_handler.c s_env1.c s_env2.c lexing2.c parser.c
 
 INCLUDE = include/
 

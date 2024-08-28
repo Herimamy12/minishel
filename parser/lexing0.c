@@ -76,7 +76,8 @@ int	check_syntax(t_token *token)
 	{
 		if (is_stream(token->type) && !check_stream(token))
 		{
-			printf("Syntax error near token %s\n", print_token_type(token));
+			printf("Syntax error near token %s\n",
+				print_token_type(token->type));
 			return (0);
 		}
 		if (token->type == pipes && !check_pipe(token))

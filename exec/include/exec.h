@@ -15,6 +15,7 @@
 # include <sys/types.h>
 # include <sys/wait.h>
 # include <fcntl.h>
+# include <unistd.h>
 # include "parser.h"
 # include "s_data.h"
 # include "builtins.h"
@@ -23,12 +24,14 @@ void	free_str_array(char **str);
 int		count_lst_items(t_list *lst);
 char	**lst_2_str(t_list *lst);
 void	print_str_array(char **str);
+int		is_a_directory(char *pathname);
 // input & output stream
 int		set_input_stream(t_stream *stream);
 int		set_output_stream(t_stream *stream, t_data *data);
 // exek
 int		run_simple_cmd(t_command *cmd, t_data *data);
 void	ft_exec(t_data *data);
+int		cmd_executor(t_data *data);
 // exek util
 int		ft_execvpe(char **str_cmd, char **env);
 char	*find_cmd_path(char *name, char **env);
@@ -37,10 +40,11 @@ char	**get_path_lst(char **env);
 void	link_2_next(int next_cmd, int stream, int fds[2]);
 void	run_command(t_command *cmd, t_data *data, int f);
 void	reset_std_stream(t_shell *sh);
-void	sig_handler(int signum);
 int		execute(t_command *usr_cmd, t_data *data);
 void	launch_cmd(t_command *user_cmd, t_data *data);
 void	close_all_pipe_except(t_command *cmd);
 void	close_pipe_stream(t_command *cmd);
 void	ft_execute(t_command *cmd, t_data *data);
+int		set_io_stream(t_command *cmd);
+int		get_here_doc(t_here_doc *hd, t_data *data);
 #endif

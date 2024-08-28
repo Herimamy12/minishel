@@ -20,8 +20,12 @@ void	child(t_command *cmd, t_data *data)
 		set_pipe_2_output(cmd->pipes);
 	if (cmd->prev)
 		set_pipe_2_input(cmd->prev->pipes);
-	if (!set_input_stream(cmd->io[0]) || !set_output_stream(cmd->io[1], data))
+	if (!set_io_stream(cmd))
+	{
+		destroy_data(data);
 		exit(EXIT_FAILURE);
+	}
+	close_pipe_stream(cmd->next);
 	ft_execute(cmd, data);
 }
 
@@ -42,7 +46,8 @@ int	wait_command(t_data *data)
 
 void	fork_cmd_chain(t_command *user_cmd, t_data *data)
 {
-	int	pid;
+	int			pid;
+	t_command	*cmd;
 
 	while (user_cmd)
 	{
@@ -55,8 +60,11 @@ void	fork_cmd_chain(t_command *user_cmd, t_data *data)
 			if (user_cmd->prev)
 				close_pipe(user_cmd->prev->pipes);
 		}
-		close_pipe_stream(user_cmd);
+		cmd = user_cmd;
 		user_cmd = user_cmd->next;
+		cmd->next = NULL;
+		close_pipe_stream(cmd);
+		cmd->next = user_cmd;
 	}
 }
 

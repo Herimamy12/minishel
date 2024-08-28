@@ -66,36 +66,3 @@ char	*find_cmd_path(char *name, char **env)
 		return (ft_strdup(name));
 	return (find_full_path(name, env));
 }
-
-static int	is_str_empty(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i][0])
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	ft_execvpe(char **str_cmd, char **env)
-{
-	char	*cmd_path;
-
-	if (!str_cmd || is_str_empty(str_cmd))
-		exit(EXIT_SUCCESS);
-	cmd_path = find_cmd_path(str_cmd[0], env);
-	if (!cmd_path)
-	{
-		report_error(str_cmd[0]);
-		report_error(" : no such file or directory\n");
-		return (127);
-	}
-	execve(cmd_path, str_cmd, env);
-	perror(str_cmd[0]);
-	free(cmd_path);
-	return (EXIT_FAILURE);
-}

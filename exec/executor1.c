@@ -23,14 +23,22 @@ void	close_all_pipe_except(t_command *cmd)
 
 void	close_pipe_stream(t_command *cmd)
 {
-	t_stream	*input;
+	t_stream	*stream;
 	t_here_doc	*hd;
 
-	input = last_stream(cmd->io[0]);
-	if (input && input->type == here_doc)
+	while (cmd)
 	{
-		hd = (t_here_doc *)input->value;
-		close_pipe(hd->hd_pipe);
+		stream = cmd->stream;
+		while (stream)
+		{
+			if (stream->type == here_doc)
+			{
+				hd = (t_here_doc *)stream->value;
+				close_pipe(hd->pipe);
+			}
+			stream = stream->next;
+		}
+		cmd = cmd->next;
 	}
 }
 
@@ -56,4 +64,52 @@ void	ft_execute(t_command *cmd, t_data *data)
 	destroy_data(data);
 	ft_lstclear(&lst, &free);
 	exit(exit_code);
+}
+
+static int	expand_here_doc(t_command *cmd, t_data *data)
+{
+	t_stream	*stream;
+
+	while (cmd)
+	{
+		stream = cmd->stream;
+		while (stream)
+		{
+			if (stream->type == here_doc && get_here_doc
+				((t_here_doc *)stream->value, data) != EXIT_SUCCESS)
+				return (0);
+			stream = stream->next;
+		}
+		cmd = cmd->next;
+	}
+	return (1);
+}
+
+int	cmd_executor(t_data *data)
+{
+	t_token		*token;
+	t_command	*cmd;
+
+	token = prompt_user(data->sh);
+	if (!token)
+	{
+		printf("exit\n");
+		return (0);
+	}
+	cmd = parse_command(token);
+	data->cmd = cmd;
+	if (!expand_here_doc(cmd, data))
+	{
+		data->sh->exit_code = 130;
+		return (1);
+	}
+	if (data->cmd->args && !data->cmd->next && !ft_strcmp
+		(data->cmd->args->content, "exit"))
+		handle_exit (data);
+	else
+		launch_cmd(cmd, data);
+	destroy_command(cmd);
+	destroy_token(token);
+	data->cmd = NULL;
+	return (1);
 }

@@ -9,29 +9,20 @@
 /*   Updated: 2024/08/19 09:02:22 by nirirako@        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "parser.h"
 
 int	main(int argc, char **argv, char **env)
 {
-	char		*cmd;
-	t_token		*token;
-	t_shell		*sh;
-	t_command	*str_cmd;
+	t_shell	*sh;
+	t_token	*token;
 
 	if (!argc || !argv || !env)
 		return (1);
-	cmd = "cmd1|cmd2";
 	sh = new_shell(env);
-	token = cmd_parser(cmd, sh);
+	token = prompt_user(sh);
 	print_token(token);
-	if (token)
-	{
-		str_cmd = cmd_builder(token, sh);
-		print_command (str_cmd);
-		destroy_command(str_cmd);
-		destroy_token(token);
-	}
+	destroy_token(token);
 	destroy_shell(sh);
+	rl_clear_history();
 	return (0);
 }

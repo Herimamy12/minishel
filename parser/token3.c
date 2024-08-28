@@ -18,17 +18,16 @@ static int	handle_dollar_quote(char *words, t_string **string, t_shell *sh)
 	int		i;
 	char	*var;
 
-	i = 1;
-	if (words[i] == '$' || words[i] == ' ')
+	i = 0;
+	if (words[i] == '$' || words[i] == ' ' || !words[i])
 	{
 		append_string(string, ft_strdup("$"));
 		return (1);
 	}
 	while (words[i] && words[i] != '"' && words[i] != '$' && words[i] != 32)
 	{
-		if (words[i] == '?')
+		if (words[i++] == '?')
 			break ;
-		i++;
 	}
 	var = ft_substr(words, 0, i);
 	append_string(string, expand(var, sh));

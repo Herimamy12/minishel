@@ -13,7 +13,7 @@
 #ifndef S_DATA_H
 # define S_DATA_H
 
-# include "parser.h"
+# include "s_command.h"
 
 typedef struct s_data
 {

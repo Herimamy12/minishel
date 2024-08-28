@@ -13,9 +13,9 @@ NAME = exec
 
 BIN_SRC = main.c
 
-TAR_SRC = builtins.c builtins1.c builtins2.c executor.c exec_util.c \
-		  input_stream.c output_stream.c s_data.c utility.c executor1.c\
-		  builtins3.c
+TAR_SRC = builtins.c builtins1.c builtins2.c executor.c exec_util.c builtins4.c\
+		  stream.c s_data.c utility.c executor1.c builtins3.c process_here_doc.c\
+		  exec_utils.c
 
 INCLUDE = include/
 
@@ -46,7 +46,7 @@ $(OBJ_DIR)/%.o: %.c
 $(NAME): $(BIN_OBJ) $(TAR_OBJ)
 	make -C $(LIB)
 	make -C $(LIB) bonus
-	make -C $(LIB1)
+	make -C $(LIB1) tar
 	$(CC) -o $(NAME) $(BIN_OBJ) $(TAR_OBJ) -g $(LFLAGS)
 
 all: $(NAME)

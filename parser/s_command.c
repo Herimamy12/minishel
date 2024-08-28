@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_command_1.c                                      :+:      :+:    :+:   */
+/*   s_command.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 09:04:11 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/07/31 09:04:23 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/08/27 08:45:39 by nirirako@         #+#    #+#             */
+/*   Updated: 2024/08/27 08:48:02 by nirirako@        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,21 @@ t_command	*new_command(void)
 		printf("Malloc error\n");
 		return (NULL);
 	}
-	cmd->io[0] = NULL;
-	cmd->io[1] = NULL;
+	cmd->stream = NULL;
 	cmd->args = NULL;
 	cmd->next = NULL;
 	cmd->prev = NULL;
 	cmd->pipes = NULL;
 	cmd->pid = -1;
+	return (cmd);
+}
+
+t_command	*last_command(t_command *cmd)
+{
+	if (!cmd)
+		return (cmd);
+	while (cmd->next)
+		cmd = cmd->next;
 	return (cmd);
 }
 
@@ -54,22 +62,12 @@ void	destroy_command(t_command *cmd)
 	while (cmd)
 	{
 		tmp = cmd->next;
-		destroy_stream(cmd->io[0]);
-		destroy_stream(cmd->io[1]);
+		destroy_stream(cmd->stream);
 		destroy_args(cmd);
 		destroy_pipe(cmd->pipes);
 		free(cmd);
 		cmd = tmp;
 	}
-}
-
-t_command	*last_command(t_command *cmd)
-{
-	if (!cmd)
-		return (cmd);
-	while (cmd->next)
-		cmd = cmd->next;
-	return (cmd);
 }
 
 void	print_args(t_list *args)

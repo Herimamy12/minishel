@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   output_stream.c                                    :+:      :+:    :+:   */
+/*   input_stream.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 10:55:39 by nherimam          #+#    #+#             */
-/*   Updated: 2024/08/02 10:55:49 by nherimam         ###   ########.fr       */
+/*   Created: 2024/08/02 10:29:32 by nherimam          #+#    #+#             */
+/*   Updated: 2024/08/02 10:29:33 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "exec.h"
+
+static int	handle_input(char *file_name)
+{
+	int	fd;
+
+	fd = open(file_name, O_RDONLY);
+	if (fd < 0)
+	{
+		perror(file_name);
+		return (fd);
+	}
+	dup2(fd, 0);
+	close (fd);
+	return (fd);
+}
 
 static int	handle_output(char *file_name)
 {
@@ -18,7 +32,10 @@ static int	handle_output(char *file_name)
 
 	fd = open (file_name, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd < 0)
+	{
+		perror(file_name);
 		return (fd);
+	}
 	dup2(fd, 1);
 	close(fd);
 	return (fd);
@@ -30,28 +47,37 @@ static int	handle_append(char *file_name)
 
 	fd = open (file_name, O_WRONLY | O_CREAT | O_APPEND, 0644);
 	if (fd < 0)
+	{
+		perror(file_name);
 		return (fd);
+	}
 	dup2(fd, 1);
 	close(fd);
 	return (fd);
 }
 
-int	set_output_stream(t_stream *stream, t_data *data)
+int	set_io_stream(t_command *cmd)
 {
-	int	r;
+	t_stream	*stream;
+	char		*file_name;
+	int			r;
 
+	stream = cmd->stream;
 	while (stream)
 	{
-		dup2(data->sh->stdout, 1);
-		if (stream->type == append)
-			r = handle_append ((char *)stream->value);
-		else
-			r = handle_output ((char *)stream->value);
-		if (r < 0)
-		{
-			perror((char *)stream->value);
+		r = 1;
+		if (stream->type != here_doc)
+			file_name = (char *)stream->value;
+		if (stream->type == input && !handle_input(file_name))
+			r = 0;
+		else if (stream->type == output && !handle_output(file_name))
+			r = 0;
+		else if (stream->type == append && !handle_append(file_name))
+			r = 0;
+		else if (stream->type == here_doc)
+			set_pipe_2_input(((t_here_doc *)stream->value)->pipe);
+		if (!r)
 			return (0);
-		}
 		stream = stream->next;
 	}
 	return (1);

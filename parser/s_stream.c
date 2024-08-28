@@ -5,40 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 08:39:35 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/07/31 08:39:47 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/08/27 09:20:25 by nirirako@         #+#    #+#             */
+/*   Updated: 2024/08/27 09:20:40 by nirirako@        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "s_stream.h"
+#include "utility.h"
 
-t_stream	*new_stream(enum e_token type, char *fileName, t_shell *sh)
+t_stream	*new_stream(enum e_token type, void *value)
 {
 	t_stream	*stream;
+	char		*str;
 
 	stream = (t_stream *)malloc(sizeof(t_stream));
 	if (!stream)
 	{
-		printf("Malloc error\n");
+		report_error("Malloc error in t_stream\n");
 		return (NULL);
 	}
+	str = (char *)value;
 	stream->type = type;
-	if (type != here_doc)
-		stream->value = (char *)ft_strdup(fileName);
-	else
-		stream->value = new_here_doc(fileName, sh);
 	stream->next = NULL;
+	if (type != here_doc)
+		stream->value = ft_strdup(value);
+	else
+		stream->value = new_here_doc(str);
 	return (stream);
 }
 
-void	append_stream(t_stream **stream, t_stream *new)
+t_stream	*last_stream(t_stream *stream)
+{
+	while (stream && stream->next)
+		stream = stream->next;
+	return (stream);
+}
+
+void	append_stream(t_stream **stream, t_stream *n_stream)
 {
 	if (!*stream)
 	{
-		*stream = new;
+		*stream = n_stream;
 		return ;
 	}
-	last_stream(*stream)->next = new;
+	last_stream(*stream)->next = n_stream;
 }
 
 void	destroy_stream(t_stream *stream)
@@ -47,45 +57,25 @@ void	destroy_stream(t_stream *stream)
 
 	while (stream)
 	{
-		if (stream->type == here_doc)
-			destroy_here_doc(stream->value);
+		tmp = stream;
+		stream = stream->next;
+		if (tmp->type == here_doc)
+			destroy_here_doc((t_here_doc *)tmp->value);
 		else
-			free(stream->value);
-		tmp = stream->next;
-		free(stream);
-		stream = tmp;
+			free((char *)tmp->value);
+		free(tmp);
 	}
 }
 
 void	print_stream(t_stream *stream)
 {
-	char	*str;
-
-	if (!stream)
-		printf("stdin / stdout\n");
 	while (stream)
 	{
-		if (stream->type == input)
-			str = "[input]";
-		else if (stream->type == here_doc)
-			str = "[here_doc]";
-		else if (stream->type == output)
-			str = "[output]";
-		else
-			str = "[append]";
 		if (stream->type != here_doc)
-			printf("%s %s\n", (char *)stream->value, str);
+			printf("[%s : %s]\n", print_token_type(stream->type),
+				(char *)stream->value);
 		else
-			printf("%s\n", str);
+			print_here_doc((t_here_doc *)stream->value);
 		stream = stream->next;
 	}
-}
-
-t_stream	*last_stream(t_stream *stream)
-{
-	if (!stream)
-		return (stream);
-	while (stream->next)
-		stream = stream->next;
-	return (stream);
 }

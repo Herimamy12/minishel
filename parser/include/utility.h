@@ -20,7 +20,7 @@
 # include "token.h"
 
 void	report_error(char *error_msg);
-char	*print_token_type(t_token *token);
+char	*print_token_type(enum e_token type);
 int		ft_strcmp(char *s1, char *s2);
 char	**split_str(char *str);
 char	*expand(char *words, t_shell *sh);

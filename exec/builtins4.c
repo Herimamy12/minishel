@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   builtins4.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -45,17 +45,25 @@ void	handle_exit(t_data *data)
 	char	*str;
 	int		exit_code;
 
+	printf("exit\n");
 	if (data->cmd->args->next)
 	{
 		str = (char *)data->cmd->args->next->content;
 		if (is_not_digit (str))
 			exit_code = 2;
 		else
+		{
+			if (data->cmd->args->next->next)
+			{
+				printf("minishell: exit: %s: too many arguments\n", str);
+				data->sh->exit_code = EXIT_FAILURE;
+				return ;
+			}
 			exit_code = get_exit_codes (str);
+		}
 	}
 	else
 		exit_code = data->sh->exit_code;
-	printf("exit\n");
 	destroy_data(data);
 	rl_clear_history ();
 	exit(exit_code);

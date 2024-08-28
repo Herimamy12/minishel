@@ -18,23 +18,23 @@ void	report_error(char *error_msg)
 	ft_putstr_fd(error_msg, 2);
 }
 
-char	*print_token_type(t_token *token)
+char	*print_token_type(enum e_token type)
 {
-	if (token->type == pipes)
+	if (type == pipes)
 		return ("PIPES");
-	else if (token->type == input)
+	else if (type == input)
 		return ("INPUT");
-	else if (token->type == here_doc)
+	else if (type == here_doc)
 		return ("HERE_DOC");
-	else if (token->type == output)
+	else if (type == output)
 		return ("OUTPUT");
-	else if (token->type == append)
+	else if (type == append)
 		return ("APPEND");
-	else if (token->type == dollar)
+	else if (type == dollar)
 		return ("DOLLAR");
-	else if (token->type == space)
+	else if (type == space)
 		return ("SPACE");
-	else if (token->type == quote)
+	else if (type == quote)
 		return ("QUOTE");
 	return ("WORD");
 }
@@ -80,6 +80,8 @@ char	*expand(char *words, t_shell *sh)
 {
 	char	*e_var;
 
+	if (*words == '$')
+		words++;
 	if (*words == '?')
 	{
 		if (g_sigint_count)

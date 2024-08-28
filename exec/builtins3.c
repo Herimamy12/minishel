@@ -40,6 +40,26 @@ int	handle_pwd(void)
 	return (EXIT_SUCCESS);
 }
 
+int	echo_newline(char **av)
+{
+	int	i;
+
+	i = 1;
+	if (!av[i])
+	{
+		printf("\n");
+		return (EXIT_SUCCESS);
+	}
+	while (av[i])
+	{
+		printf("%s", av[i++]);
+		if (av[i])
+			printf(" ");
+	}
+	printf("\n");
+	return (EXIT_SUCCESS);
+}
+
 int	handle_echo(char **av)
 {
 	int	i;
@@ -57,19 +77,6 @@ int	handle_echo(char **av)
 		}
 	}
 	else
-	{
-		if (!av[i])
-		{
-			printf("\n");
-			return (EXIT_SUCCESS);
-		}
-		while (av[i])
-		{
-			printf("%s", av[i++]);
-			if (av[i])
-				printf(" ");
-		}
-		printf("\n");
-	}
+		echo_newline (av);
 	return (EXIT_SUCCESS);
 }
