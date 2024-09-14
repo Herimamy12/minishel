@@ -31,7 +31,7 @@ void	insert_2_env_lst(char *var_name, char *var_value, int index,
 void	destroy_env(t_env *env);
 void	remove_from_env_lst(char *var_name, t_env **env);
 void	destroy_env_lst(t_env *env);
-char	*get_env_var_value(t_env *env, char *var_value);
+char	*get_env_var_value(t_env *env, char *var_name);
 void	print_env(t_env *env);
 t_list	*env_2_lst(t_env *env);
 int		set_env_var(char *var_name, char *new_value, t_env *env, int index);
