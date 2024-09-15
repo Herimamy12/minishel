@@ -36,8 +36,6 @@ void	set_signal(int signum, int handler)
 		sa.sa_handler = SIG_IGN;
 	else if (handler == DEFAULT)
 		sa.sa_handler = SIG_DFL;
-	else if (handler == WAIT)
-		sa.sa_handler = &sig_handler_wait;
 	else
 		sa.sa_handler = &sig_handler;
 	sigaction(signum, &sa, NULL);
