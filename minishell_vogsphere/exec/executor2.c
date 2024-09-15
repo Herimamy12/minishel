@@ -44,9 +44,15 @@ static void	handle_wait_signals(t_data *data, int exit_status)
 void	launch_cmd(t_command *user_cmd, t_data *data)
 {
 	int		exit_status;
+	char	*value;
 	int		type;
 
 	type = is_builtins(user_cmd);
+	if (!user_cmd->next && user_cmd->args)
+	{
+		value = (char *)ft_lstlast(user_cmd->args)->content;
+		update_env_var("_", ft_strdup(value), &data->sh->env, 3);
+	}
 	if (!user_cmd->next && (type == cd || type == exports || type == unset))
 		handle_unexcd(user_cmd, data, type);
 	else

@@ -50,6 +50,6 @@ int	main(int argc, char **argv, char **env)
 
 	if (!argc || !argv || !env)
 		return (1);
-	minishell(NULL, &exit_code);
+	minishell(env, &exit_code);
 	return (exit_code);
 }
