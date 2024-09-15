@@ -55,11 +55,7 @@ static int	check_var_name(char *var_name)
 	while (*var_name)
 	{
 		if (!ft_isalnum(*var_name) && *var_name != '_')
-		{
-			if (*var_name == '+' && !*(var_name + 1))
-				return (1);
 			return (0);
-		}
 		var_name++;
 	}
 	return (1);
