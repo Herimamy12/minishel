@@ -66,7 +66,6 @@ void	handle_exit(t_data *data)
 {
 	int		exit_code;
 
-	printf("Bye\n");
 	exit_code = 0;
 	if (data->cmd->args->next)
 	{
@@ -79,6 +78,7 @@ void	handle_exit(t_data *data)
 		if (g_sigint_count)
 			exit_code = 130;
 	}
+	printf("Bye\n");
 	destroy_data(data);
 	rl_clear_history ();
 	exit(exit_code);
