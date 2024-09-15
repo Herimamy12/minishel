@@ -42,7 +42,8 @@ static int	handle_dollar_hd(char *words, t_string **string, t_shell *sh)
 			break ;
 		if (words[i] == '?')
 		{
-			i++;
+			if (i == 1)
+				i++;
 			break ;
 		}
 		i++;
