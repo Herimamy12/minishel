@@ -12,26 +12,12 @@
 
 #include "minishell.h"
 
-void	update_shell_level(t_shell *sh)
-{
-	char	*shl_lvl;
-	int		num_lvl;
-
-	shl_lvl = get_env_var_value(sh->env, "SHLVL");
-	num_lvl = ft_atoi(shl_lvl) + 1;
-	free(shl_lvl);
-	shl_lvl = ft_itoa(num_lvl);
-	if (!set_env_var("SHLVL", shl_lvl, sh->env, 3))
-		insert_2_env_lst("SHLVL", shl_lvl, 3, &sh->env);
-}
-
 void	minishell(char **env, int *exit_code)
 {
 	t_shell	*sh;
 	t_data	*data;
 
 	sh = new_shell(env);
-	update_shell_level(sh);
 	data = new_data(NULL, sh);
 	while (1)
 	{
