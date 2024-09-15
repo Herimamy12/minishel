@@ -16,12 +16,6 @@
 
 sig_atomic_t	g_sigint_count = 0;
 
-void	sig_handler_wait(int signum)
-{
-	if (signum == SIGINT)
-		g_sigint_count = 1;
-}
-
 void	sig_handler(int signum)
 {
 	if (signum != SIGINT)
