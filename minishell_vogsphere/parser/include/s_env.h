@@ -38,4 +38,5 @@ int		set_env_var(char *var_name, char *new_value, t_env *env, int index);
 t_env	*dup_env_lst(t_env *env_lst);
 void	swap_env_lst_items(t_env *env1, t_env *env2);
 void	sort_env_lst(t_env *env);
+void	update_env_var(char *var_name, char *new_value, t_env **env, int index);
 #endif

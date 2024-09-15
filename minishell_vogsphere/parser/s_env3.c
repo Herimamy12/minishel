@@ -12,12 +12,13 @@
 
 #include "s_env.h"
 #include "utility.h"
+#include "libft.h"
 
 static int	does_env_var_exist(char *var_name, t_env *env)
 {
 	while (env)
 	{
-		if (!ft_strcmp(var_name, env->value))
+		if (!ft_strcmp(var_name, env->name))
 			return (1);
 		env = env->next;
 	}
@@ -43,4 +44,12 @@ int	set_env_var(char *var_name, char *new_value, t_env *env, int index)
 		env = env->next;
 	}
 	return (0);
+}
+
+void	update_env_var(char *var_name, char *new_value, t_env **env, int index)
+{
+	if (does_env_var_exist(var_name, *env))
+		set_env_var(var_name, new_value, *env, index);
+	else
+		insert_2_env_lst(ft_strdup(var_name), new_value, index, env);
 }

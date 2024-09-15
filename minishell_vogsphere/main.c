@@ -12,12 +12,24 @@
 
 #include "minishell.h"
 
+void	update_shell_level(t_shell *sh)
+{
+	char	*shlvl;
+	int		num_shlvl;
+
+	shlvl = get_env_var_value(sh->env, "SHLVL");
+	num_shlvl = ft_atoi(shlvl) + 1;
+	update_env_var("SHLVL", ft_itoa(num_shlvl), &sh->env, 3);
+	free(shlvl);
+}
+
 void	minishell(char **env, int *exit_code)
 {
 	t_shell	*sh;
 	t_data	*data;
 
 	sh = new_shell(env);
+	update_shell_level(sh);
 	data = new_data(NULL, sh);
 	while (1)
 	{
@@ -38,6 +50,6 @@ int	main(int argc, char **argv, char **env)
 
 	if (!argc || !argv || !env)
 		return (1);
-	minishell(env, &exit_code);
+	minishell(NULL, &exit_code);
 	return (exit_code);
 }
