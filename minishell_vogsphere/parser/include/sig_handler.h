@@ -16,6 +16,7 @@
 # define IGNORE  -3
 # define HANDLER -4
 # define HERE_DOC -5
+# define WAIT -6
 # include <signal.h>
 # include <stdio.h>
 # include "libft.h"
