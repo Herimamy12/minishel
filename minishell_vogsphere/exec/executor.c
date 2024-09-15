@@ -36,7 +36,6 @@ int	wait_command(t_data *data)
 	int			exit_status;
 
 	cmd = data->cmd;
-	set_signal(SIGINT, IGNORE);
 	if (g_sigint_count)
 		g_sigint_count = 0;
 	while (cmd)
@@ -68,40 +67,5 @@ void	fork_cmd_chain(t_command *user_cmd, t_data *data)
 		cmd->next = NULL;
 		close_pipe_stream(cmd);
 		cmd->next = user_cmd;
-	}
-}
-
-static void	handle_unexcd(t_command *user_cmd, t_data *data, int type)
-{
-	char	**arg;
-
-	if (!set_io_stream(user_cmd))
-		data->sh->exit_code = EXIT_FAILURE;
-	else
-	{
-		arg = lst_2_str(user_cmd->args);
-		data->sh->exit_code = handle_builtins(arg, type, data->sh);
-		free_str_array(arg);
-	}
-	reset_std_stream(data->sh);
-}
-
-void	launch_cmd(t_command *user_cmd, t_data *data)
-{
-	int		exit_status;
-	int		type;
-
-	type = is_builtins(user_cmd);
-	if (!user_cmd->next && (type == cd || type == exports || type == unset))
-		handle_unexcd(user_cmd, data, type);
-	else
-	{
-		fork_cmd_chain(user_cmd, data);
-		set_signal(SIGINT, IGNORE);
-		exit_status = wait_command(data);
-		if (WIFEXITED(exit_status))
-			data->sh->exit_code = WEXITSTATUS(exit_status);
-		else
-			data->sh->exit_code = 130;
 	}
 }

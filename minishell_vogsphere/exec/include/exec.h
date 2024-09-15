@@ -33,6 +33,9 @@ int		run_simple_cmd(t_command *cmd, t_data *data);
 void	ft_exec(t_data *data);
 int		cmd_executor(t_data *data);
 
+void	child(t_command *cmd, t_data *data);
+int		wait_command(t_data *data);
+void	fork_cmd_chain(t_command *user_cmd, t_data *data);
 int		ft_execvpe(char **str_cmd, char **env);
 char	*find_cmd_path(char *name, char **env);
 void	link_2_next(int next_cmd, int stream, int fds[2]);

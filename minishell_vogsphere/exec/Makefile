@@ -15,7 +15,7 @@ BIN_SRC = main.c
 
 TAR_SRC = builtins.c builtins1.c builtins2.c executor.c exec_util.c builtins4.c\
 		  stream.c s_data.c utility.c executor1.c builtins3.c process_here_doc.c\
-		  exec_utils.c process_here_doc1.c
+		  exec_utils.c process_here_doc1.c executor2.c
 
 INCLUDE = include/
 
