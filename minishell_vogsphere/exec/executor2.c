@@ -27,16 +27,18 @@ static void	handle_unexcd(t_command *user_cmd, t_data *data, int type)
 	reset_std_stream(data->sh);
 }
 
-static void	handle_wait_signals(t_data *data)
+static void	handle_wait_signals(t_data *data, int exit_status)
 {
 	printf("\n");
-	if (g_sigint_count)
+	if (WIFSIGNALED(exit_status))
 	{
-		g_sigint_count = 0;
-		data->sh->exit_code = 130;
+		if (WTERMSIG(exit_status) == SIGINT)
+			data->sh->exit_code = 130;
+		else
+			data->sh->exit_code = 131;
 	}
 	else
-		data->sh->exit_code = 131;
+		data->sh->exit_code = -1;
 }
 
 void	launch_cmd(t_command *user_cmd, t_data *data)
@@ -50,11 +52,11 @@ void	launch_cmd(t_command *user_cmd, t_data *data)
 	else
 	{
 		fork_cmd_chain(user_cmd, data);
-		set_signal(SIGINT, WAIT);
+		set_signal(SIGINT, IGNORE);
 		exit_status = wait_command(data);
 		if (WIFEXITED(exit_status))
 			data->sh->exit_code = WEXITSTATUS(exit_status);
 		else
-			handle_wait_signals(data);
+			handle_wait_signals(data, exit_status);
 	}
 }
