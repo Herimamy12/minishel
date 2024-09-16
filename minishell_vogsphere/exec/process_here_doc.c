@@ -32,7 +32,7 @@ static int	handle_dollar_hd(char *words, t_string **string, t_shell *sh)
 
 	i = 1;
 	if (!words[i] || (words[i] != '?' && !ft_isalnum(words[i])
-		&& words[i] != '_'))
+			&& words[i] != '_'))
 	{
 		append_string(string, ft_strdup("$"));
 		return (1);
