@@ -19,7 +19,7 @@ static int	handle_dollar_quote(char *words, t_string **string, t_shell *sh)
 	char	*var;
 
 	i = 0;
-	if (words[i] == '$' || words[i] == ' ' || !words[i] || words[i] == '"')
+	if (!ft_isalnum(words[i]) && words[i] != '?' && words[i] != '_')
 	{
 		append_string(string, ft_strdup("$"));
 		if (words[i] == ' ')
@@ -30,8 +30,10 @@ static int	handle_dollar_quote(char *words, t_string **string, t_shell *sh)
 	{
 		if (words[i] != '?' && !ft_isalnum(words[i]))
 			break ;
-		if (words[i++] == '?')
+		if ((words[i] == '?' && i == 0 && i++) || words[i] == '?')
 			break ;
+		else
+			i++;
 	}
 	var = ft_substr(words, 0, i);
 	append_string(string, expand(var, sh));
