@@ -31,8 +31,8 @@ static int	handle_dollar_hd(char *words, t_string **string, t_shell *sh)
 	char	*var;
 
 	i = 1;
-	if (!words[i] || words[i] == '$' || words[i] == ' '
-		|| words[i] == '"' || words[i] == '\'')
+	if (!words[i] || (words[i] != '?' && !ft_isalnum(words[i])
+		&& words[i] != '_'))
 	{
 		append_string(string, ft_strdup("$"));
 		return (1);
