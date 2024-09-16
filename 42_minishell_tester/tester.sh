@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Change if you store the tester in another PATH
-export MINISHELL_PATH=../minishell_final/
+export MINISHELL_PATH=../minishell_vogsphere/
 export EXECUTABLE=minishell
 RUNDIR=$PWD/
 
