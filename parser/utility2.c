@@ -13,13 +13,6 @@
 #include "utility.h"
 #include "sig_handler.h"
 
-static char *find_next_word(char *words)
-{
-    while (*words && ft_isdigit(*words))
-        words++;
-    return (words);
-}
-
 char	*expand(char *words, t_shell *sh)
 {
 	char	*e_var;
@@ -35,11 +28,9 @@ char	*expand(char *words, t_shell *sh)
 		}
 		return (ft_itoa(get_exit_code(sh)));
 	}
-    if (*words == '_' || ft_isalpha(*words))
-	    e_var = get_env_var_value(sh->env, words);
-    else
-    {
-        e_var = ft_strdup(find_next_word(words));
-    }
+	if (*words == '_' || ft_isalpha(*words))
+		e_var = get_env_var_value(sh->env, words);
+	else
+		e_var = ft_strdup(words + 1);
 	return (e_var);
 }
