@@ -22,7 +22,7 @@ static char	*prompt(char *line, t_shell *sh, t_token **r_token)
 		append_token(r_token, token);
 		if (last_token(token)->type != pipes)
 			return (NULL);
-		return ("> ");
+		report_error("Syntax error near token PIPE\n");
 	}
 	destroy_token(*r_token);
 	*r_token = NULL;
