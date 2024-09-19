@@ -42,8 +42,6 @@ t_token	*str2token(t_string *str)
 	{
 		if (!is_str_whitespace(str))
 			append_token(&token, new_token(word, ft_strdup(str->words)));
-		else if (is_str_whitespace(str) && !str->next)
-			append_token(&token, new_token(word, ft_strdup(" ")));
 		else
 			append_token(&token, new_token(space, NULL));
 		str = str->next;
