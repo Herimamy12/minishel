@@ -42,6 +42,8 @@ static int	handle_dollar(char *words, t_token **token, int f)
 	if (f || (*words != '_' && *words != '?' && !ft_isalnum(*words)))
 	{
 		append_token(token, new_token(word, ft_strdup("$")));
+		if (*words == '$')
+			return (2);
 		return (1);
 	}
 	append_token(token, new_token(dollar, NULL));
