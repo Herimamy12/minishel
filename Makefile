@@ -12,7 +12,7 @@
 
 NAME = minishell
 
-SRC = $(wildcard *.c)
+SRC = main.c
 
 LIB1 = libft/
 
