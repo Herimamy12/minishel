@@ -51,14 +51,20 @@ void	close_pipe(t_pipe *pipes)
 
 void	set_pipe_2_output(t_pipe *pipes)
 {
-	close(pipes->fds[0]);
-	dup2(pipes->fds[1], 1);
-	close(pipes->fds[1]);
+	if (pipes)
+	{
+		close(pipes->fds[0]);
+		dup2(pipes->fds[1], 1);
+		close(pipes->fds[1]);
+	}
 }
 
 void	set_pipe_2_input(t_pipe *pipes)
 {
-	close(pipes->fds[1]);
-	dup2(pipes->fds[0], 0);
-	close(pipes->fds[0]);
+	if (pipes)
+	{
+		close(pipes->fds[1]);
+		dup2(pipes->fds[0], 0);
+		close(pipes->fds[0]);
+	}
 }

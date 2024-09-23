@@ -54,6 +54,8 @@ int	append_command(t_command **cmd, t_command *new)
 	last = last_command(*cmd);
 	if (p)
 		last->pipes = p;
+	else
+		last->pipes = NULL;
 	last->next = new;
 	new->prev = last;
 	return (!(p == NULL));
