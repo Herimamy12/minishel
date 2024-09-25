@@ -28,7 +28,7 @@ int	match(char *input, char *pattern)
 		pattern++;
 		input++;
 	}
-	if (!*pattern && !*input)
+	if (!*pattern)
 		return (1);
 	else if (!*input || *pattern != '*')
 		return (0);
