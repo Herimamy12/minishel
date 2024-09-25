@@ -91,7 +91,7 @@ $.$<$PWD
 'EOF'$PWD'$HOME'$?.$?'
 eof
 
-<<eof' cat
+<<eof'end' cat
 $?
 $??
 $.$<$PWD
@@ -102,7 +102,7 @@ $.$<$PWD
 ".$#$PWD"
 "$???.$'PWD'"'$HOME'$EMPTY
 '										'
-eof
+eofend
 
 
 # ambiguous redirect
