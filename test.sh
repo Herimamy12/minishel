@@ -116,3 +116,44 @@ export var="abc def"
 
 < minishell.h cat -e > $TSISY
 
+cat minishell | awk '{sum += $2; count++} END {print "Average:", sum/count}' | awk '{print $1, $2, " (calculated from", $3, "entries)"}'
+
+<< eof awk '{sum += $2; count++} END {print "Average:", sum/count}' | awk '{print $1, $2, " (calculated from", $3, "entries)"}'
+1 2 3 4
+1 2 3 4
+1 2 3 4
+1 2 3 4
+eof
+
+export =value
+
+export var name=value
+
+export var$pecial="value"
+
+export var="test"
+export var=$var
+echo "$var"
+
+export var="value with spaces and special chars: $?"
+echo "$var"
+
+export var="first value"
+export var="second value"
+echo "$var"
+
+delim="END"
+cat <<$delim
+This uses a variable as the delimiter.
+$delim
+
+var="World"
+cat <<EOF
+Hello, $var! This is a test of 'single quotes' and "double quotes".
+EOF
+
+cat <<EOF
+Special characters: !@#$%^&*()_+[]{};':",.<>?/
+EOF
+
+
