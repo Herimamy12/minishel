@@ -70,6 +70,8 @@ t_token	*tokenize_string(t_string *string, t_shell *sh, int f)
 
 static int	find_here_doc(t_token *token, int flag)
 {
+	if (token && token->type here_doc)
+		return (1);
 	if (!token || !token->prev)
 		return (0);
 	if (token->prev->type == here_doc)
