@@ -19,19 +19,22 @@ int	match(char *input, char *pattern)
 	f = 0;
 	while (*pattern == '*' && ++f)
 		pattern++;
-	if (!*pattern)
-		return (1);
 	while (f && *input && *input != *pattern)
 		input++;
+	if (*input != *pattern)
+		return (0);
 	while (*input && *pattern && *pattern != '*' && *input == *pattern)
 	{
 		pattern++;
 		input++;
 	}
-	if (!*pattern)
-		return (1);
-	else if (!*input || *pattern != '*')
-		return (0);
+	if (*pattern != '*')
+	{
+		if (!*pattern && !*input)
+			return (1);
+		if (!*input)
+			return (0);
+	}
 	return (match(input, pattern));
 }
 
