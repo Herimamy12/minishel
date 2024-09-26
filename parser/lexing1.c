@@ -49,6 +49,36 @@ t_token	*str2token(t_string *str)
 	return (token);
 }
 
+/*
+	get_string is used to check wether after var env expansion, the shell should
+	split the value of the variable or not. In our case, it is used to handle
+	export correctly
+	 * export var="abc def"
+	 * export vars=$var    -> in bash, vars and var are equal because $var isn't
+					expanded
+	 * export	$var=$var		-> in bash, var is expanded in this context
+*/
+static t_string	*get_string(t_token *token, char *var)
+{
+	if (token->prev)
+	{
+		if (token->prev->type == word && token->prev->value)
+		{
+			if (token->prev->value->words
+				&& token->prev->value->words[0] == '=')
+			{
+				token = token->prev;
+				if (token->prev && token->prev->prev)
+				{
+					if (token->prev->prev->type != dollar)
+						return (new_string(ft_strdup(var)));
+				}
+			}
+		}
+	}
+	return (slice(var));
+}
+
 static int	extend_token(t_token *token, t_token *next, char *var)
 {
 	t_token		*tmp_token;
@@ -61,7 +91,7 @@ static int	extend_token(t_token *token, t_token *next, char *var)
 		report_error(": Ambiguous redirect\n");
 		return (0);
 	}
-	str = slice(var);
+	str = get_string(token, var);
 	tmp_token = str2token(str);
 	if (tmp_token)
 	{
