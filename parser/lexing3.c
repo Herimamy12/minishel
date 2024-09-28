@@ -46,7 +46,7 @@ t_token	*lexicalize(t_token *token, t_shell *sh)
 	char	*m;
 
 	new = NULL;
-	if (!check_syntax(token) || !expand_token(token, sh))
+	if (!expand_token(token, sh))
 		return (NULL);
 	assemble_token(token);
 	while (token)
