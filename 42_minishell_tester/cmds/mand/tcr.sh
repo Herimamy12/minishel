@@ -14,11 +14,15 @@ env | sort -n | grep -vE ^_= | grep -vE ^SHLVL
 
 /bin/echo
 
-find / -name file_name -type f
+# find / -name file_name -type f
 
 /bin/pwd
 
 /bin/printf 'abcdef\n'
+
+"                          "
+
+'                          '
 
 echo
 
@@ -57,13 +61,10 @@ exit 123 abc
 exit -123
 
 /bin/ls
-echo $?
 
 /bin/ls1
-echo $?
 
 $? + $?
-echo $?
 
 echo $??
 
@@ -81,22 +82,17 @@ echo '$?+$?'
 echo '$? + $?'
 
 fsdfdfsdfd
-echo $?
 
 /bin/ls -ah /
 echo $?
 
 /bin/ls -ae1
-echo $?
 
 <$var123 cat
-echo $?
 
 <$var123 cat
-echo $?
 
 <$var123 <$var123 cat
-echo $?
 
 <>
 
@@ -279,6 +275,16 @@ cd /
 pwd
 echo $OLDPWD $PWD
 
+unset PWD OLDPWD
+cd /
+/bin/ls
+pwd
+echo $OLDPWD $PWD
+cd
+/bin/ls
+pwd
+echo $OLDPWD $PWD
+
 cd ./notdir
 /bin/ls
 pwd
@@ -437,7 +443,7 @@ cat tcr.sh|grep -v $ | wc
 
 ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls
 
-ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / |ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / |ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / |ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah / | ls -lah /
+ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ |ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ |ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ |ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/ | ls -lah /home/
 
 ls |lsadsa| dfsdkl | dfsd  | ls
 
