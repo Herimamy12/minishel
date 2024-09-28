@@ -15,8 +15,9 @@
 static char	*prompt(char *line, t_shell *sh, t_token **r_token)
 {
 	t_token	*token;
+	int		f;
 
-	token = token_parser(line, sh);
+	token = token_parser(line, sh, &f);
 	if (token)
 	{
 		append_token(r_token, token);
@@ -29,7 +30,12 @@ static char	*prompt(char *line, t_shell *sh, t_token **r_token)
 	if (ft_strchr(line, '$') && !ft_strchr(line, '<'))
 		sh->exit_code = 0;
 	else
-		sh->exit_code = 2;
+	{
+		if (f)
+			sh->exit_code = 2;
+		else
+			sh->exit_code = 1;
+	}
 	return ("minishell> ");
 }
 
@@ -67,15 +73,20 @@ t_token	*prompt_user(t_shell *sh)
 	return (r_token);
 }
 
-t_token	*token_parser(char *cmd, t_shell *sh)
+t_token	*token_parser(char *cmd, t_shell *sh, int *exit_code)
 {
 	t_token		*old;
 	t_token		*new;
 	t_string	*str;
+	int			f;
 
 	str = slice(cmd);
 	old = tokenify(str, sh);
-	new = lexicalize(old, sh);
+	new = NULL;
+	f = check_syntax(old);
+	if (f)
+		new = lexicalize(old, sh);
+	*exit_code = f;
 	destroy_string(str);
 	destroy_token(old);
 	return (new);
