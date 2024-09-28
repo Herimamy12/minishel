@@ -36,7 +36,7 @@ int	match(char *input, char *pattern)
 			return (0);
 	}
 	while (f && *pattern != '*')
-			pattern--;
+		pattern--;
 	return (match(input, pattern));
 }
 
