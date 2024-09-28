@@ -1,8 +1,10 @@
 echo $.$.
 
+echo $??
+
 echo "$.$."
 
-echo '"$.$."''
+echo '"$.$."'
 
 echo "'$.$.'"
 
@@ -109,12 +111,38 @@ eofend
 
 < $TSISY cat
 
+<$TSISY cat
+
 export var="abc def"
-<var cat > out
+
+<$var cat > out
+
+<$var. cat > out
+
+< $var cat > out
+
+< minishell.h cat > $var
+
+< minishell.h cat >$var.
 
 < minishell.h cat -e > $PATH
 
 < minishell.h cat -e > $TSISY
+
+<minishell.h cat -e >$TSISY
+
+<minishell.h <$TSISY cat -e > $TSISY
+
+< minishell.h <$ETO cat -e > $TSISY
+
+# syntax error
+<< >
+
+<<>
+
+><
+
+# misc
 
 cat minishell | awk '{sum += $2; count++} END {print "Average:", sum/count}' | awk '{print $1, $2, " (calculated from", $3, "entries)"}'
 
