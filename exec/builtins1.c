@@ -70,12 +70,13 @@ int	handle_cd(char **cmd, t_shell *sh)
 		return (EXIT_FAILURE);
 	}
 	tmp = ft_strdup(buf);
-	if (!set_env_var("OLDPWD", tmp, sh->env, 1))
+	if (does_env_var_exist("PWD", sh->env))
+		update_env_var("OLDPWD", tmp, &sh->env, 3);
+	else
 		free(tmp);
 	getcwd(buf, 997);
 	tmp = ft_strdup(buf);
-	if (!set_env_var("PWD", tmp, sh->env, 1))
-		free(tmp);
+	update_env_var("PWD", tmp, &sh->env, 3);
 	free(target_dir);
 	return (EXIT_SUCCESS);
 }

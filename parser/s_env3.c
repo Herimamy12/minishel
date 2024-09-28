@@ -14,7 +14,7 @@
 #include "utility.h"
 #include "libft.h"
 
-static int	does_env_var_exist(char *var_name, t_env *env)
+int	does_env_var_exist(char *var_name, t_env *env)
 {
 	while (env)
 	{
