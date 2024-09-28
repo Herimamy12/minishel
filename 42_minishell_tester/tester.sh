@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Change if you store the tester in another PATH
-export MINISHELL_PATH=../minishell/
+export MINISHELL_PATH=../
 export EXECUTABLE=minishell
 RUNDIR=$PWD/
 
@@ -57,6 +57,9 @@ main() {
 				;;
 			"test" | "t")
 			TESTFILES+=" ${RUNDIR}/cmds/mand/test.sh"
+			;;
+			"tcr")
+			TESTFILES+=" ${RUNDIR}/cmds/mand/tcr.sh"
 			;;
 		esac
 		shift
