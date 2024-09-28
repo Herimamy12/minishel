@@ -88,7 +88,7 @@ $.$<$PWD
 "$??"
 "$<$."
 "$."
-".$#$PWD"
+".$%$PWD"
 "$???.$'PWD'"'$HOME'$EMPTY
 'EOF'$PWD'$HOME'$?.$?'
 eof
@@ -101,7 +101,7 @@ $.$<$PWD
 "$??"
 "$<$."
 "$."
-".$#$PWD"
+".$%$PWD"
 "$???.$'PWD'"'$HOME'$EMPTY
 '										'
 eofend
@@ -175,7 +175,7 @@ cat <<$delim
 This uses a variable as the delimiter.
 $delim
 
-var="World"
+export var="World"
 cat <<EOF
 Hello, $var! This is a test of 'single quotes' and "double quotes".
 EOF
