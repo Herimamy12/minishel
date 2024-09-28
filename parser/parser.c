@@ -32,9 +32,9 @@ static char	*prompt(char *line, t_shell *sh, t_token **r_token)
 	else
 	{
 		if (f)
-			sh->exit_code = 2;
-		else
 			sh->exit_code = 1;
+		else
+			sh->exit_code = 2;
 	}
 	return ("minishell> ");
 }
