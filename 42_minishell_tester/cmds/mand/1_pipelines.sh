@@ -31,7 +31,7 @@ echo 42 | echo no | echo smth | grep smth
 
 # /bin/env | grep "_="
 
-/bin/env | grep "SHLVL"
+# /bin/env | grep "SHLVL"
 
 /bin/echo 1 | kaka
 

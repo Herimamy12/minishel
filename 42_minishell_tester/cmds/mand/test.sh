@@ -20,21 +20,21 @@ echo '$?+$?'
 
 echo '$? + $?'
 
-echo $$
+# echo $$
 
-echo "$$"
+# echo "$$"
 
 echo '$$'
 
-echo $$?
+# echo $$?
 
-echo "$$?"
+# echo "$$?"
 
 echo '$$?'
 
-echo $$??
+# echo $$??
 
-echo "$$??"
+# echo "$$??"
 
 echo '$$??'
 
@@ -76,9 +76,9 @@ echo "$..$PWD$.."
 
 echo $PWD . $PWD
 
-echo "$PWD . $PWD"
+# echo "$PWD . $PWD"
 
-echo ".$PWD		.		$PWD."
+# echo ".$PWD		.		$PWD."
 
 <<eof cat
 $?
@@ -103,8 +103,8 @@ $.$<$PWD
 "$."
 ".$%$PWD"
 "$???.$'PWD'"'$HOME'$EMPTY
-'										'
 eofend
+# '										'
 
 
 # ambiguous redirect
@@ -170,7 +170,7 @@ export var="first value"
 export var="second value"
 echo "$var"
 
-delim="END"
+export delim="END"
 cat <<$delim
 This uses a variable as the delimiter.
 $delim

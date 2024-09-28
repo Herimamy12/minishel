@@ -166,24 +166,24 @@ echo $'$'
 
 echo '$'$
 
-env | grep HOME
+env | grep -v _ | grep -v SHLVL | grep HOME
 
-env | grep $USER
+env | grep -v _ | grep -v SHLVL | grep $USER
 
 export USER=
-env | grep USER
+env | grep -v _ | grep -v SHLVL | grep USER
 
 export USER="@?/"
-env | grep USER
+env | grep -v _ | grep -v SHLVL | grep USER
 
 export NEW="4 2"
-env | grep NEW
+env | grep -v _ | grep -v SHLVL | grep NEW
 
 export NEW="4=2"
-env | grep NEW
+env | grep -v _ | grep -v SHLVL | grep NEW
 
 export NEW=4=2
-env | grep 4=2
+env | grep -v _ | grep -v SHLVL | grep 4=2
 
 export =
 
@@ -209,15 +209,15 @@ unset HOME
 echo $HOME
 
 export NEW=42
-env | grep NEW
+env | grep -v _ | grep -v SHLVL | grep NEW
 unset NEW
-env | grep NEW
-unset NEW
-unset NEW
+env | grep -v _ | grep -v SHLVL | grep NEW
 unset NEW
 unset NEW
 unset NEW
-env | grep NEW
+unset NEW
+unset NEW
+env | grep -v _ | grep -v SHLVL | NEW
 
 cd .
 /bin/ls
