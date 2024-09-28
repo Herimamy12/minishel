@@ -22,12 +22,12 @@ static int	check_for_ambiguity(t_token *token, char *var)
 	if (!token->prev)
 		return (0);
 	token = token->prev;
-	if (token->prev && is_stream(token->prev->type))
+	if (is_stream(token->type))
 		return (wc != 1);
-	if (token->prev && token->prev->type == space)
+	if (token && token->type == space)
 	{
 		token = token->prev;
-		if (token && token->prev && is_stream(token->prev->type))
+		if (token && is_stream(token->type))
 			return (wc != 1);
 	}
 	return (0);
