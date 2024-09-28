@@ -32,9 +32,11 @@ int	match(char *input, char *pattern)
 	{
 		if (!*pattern && !*input)
 			return (1);
-		if (!*input)
+		if (!*input && !f)
 			return (0);
 	}
+	while (f && *pattern != '*')
+			pattern--;
 	return (match(input, pattern));
 }
 
