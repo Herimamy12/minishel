@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako <nirirako@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 11:49:18 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/24 11:24:47 by nirirako         ###   ########.fr       */
+/*   Created: 2024/09/29 13:32:38 by nherimam          #+#    #+#             */
+/*   Updated: 2024/09/29 13:32:40 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef MINISHELL_H
 # define MINISHELL_H
 # include "exec.h"

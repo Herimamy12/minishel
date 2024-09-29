@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 10:09:30 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/02/20 10:09:31 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:52:14 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 13:52:15 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)

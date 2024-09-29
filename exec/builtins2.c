@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 13:29:41 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/21 13:29:50 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:24:19 by nherimam          #+#    #+#             */
+/*   Updated: 2024/09/29 13:24:23 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

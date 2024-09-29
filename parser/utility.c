@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utility.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 09:08:06 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/19 09:08:32 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:28:48 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:02:47 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

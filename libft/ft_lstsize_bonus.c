@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 10:48:20 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/02/29 10:48:21 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:51:52 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 13:51:53 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_lstsize(t_list *lst)

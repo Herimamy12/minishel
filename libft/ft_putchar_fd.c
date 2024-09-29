@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 13:47:45 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/02/22 13:47:46 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:52:52 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 13:52:53 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 #include "libft.h"
 

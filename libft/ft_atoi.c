@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 15:08:05 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/02/20 15:08:06 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:48:24 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 13:57:49 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static int	cast(char nbre)

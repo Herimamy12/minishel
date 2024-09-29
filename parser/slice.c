@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   slice.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 09:45:29 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/19 09:45:48 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:27:11 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:02:32 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "token.h"
 #include "libft.h"
 #include "utility.h"

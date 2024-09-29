@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_string1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 09:04:06 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/20 09:04:15 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:27:52 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:02:11 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

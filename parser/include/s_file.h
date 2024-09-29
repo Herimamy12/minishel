@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_file.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 09:52:27 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/09/19 09:58:07 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:31:49 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 13:31:53 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

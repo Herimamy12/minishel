@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_env.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 08:21:15 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/23 08:21:19 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:31:41 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:00:59 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

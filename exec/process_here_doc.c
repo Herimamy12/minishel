@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_here_doc.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 13:06:50 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/27 13:07:05 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:27:00 by nherimam          #+#    #+#             */
+/*   Updated: 2024/09/29 13:27:04 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

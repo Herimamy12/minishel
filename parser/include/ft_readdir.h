@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readdir.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 10:05:31 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/09/19 10:06:25 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:30:19 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 13:30:21 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

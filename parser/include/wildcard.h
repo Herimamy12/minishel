@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wildcard.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 12:20:05 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/09/19 12:20:54 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:33:33 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 13:33:38 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

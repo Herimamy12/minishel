@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executor1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 09:03:41 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/23 09:03:48 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:26:08 by nherimam          #+#    #+#             */
+/*   Updated: 2024/09/29 13:26:15 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_shell.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 09:57:32 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/07/14 09:57:54 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:27:30 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:02:01 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

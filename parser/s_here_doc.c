@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_here_doc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 08:19:08 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/27 08:59:17 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:27:00 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:01:57 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

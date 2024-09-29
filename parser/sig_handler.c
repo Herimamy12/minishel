@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sig_handler.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 08:51:04 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/23 08:51:05 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:27:05 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:02:19 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   slice.c                                            :+:      :+:    :+:   */
+/*   slice_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 09:45:29 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/19 09:45:48 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:27:17 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:02:29 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "token.h"
 #include "wildcard.h"
 #include "libft.h"

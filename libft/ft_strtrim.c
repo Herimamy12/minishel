@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 08:00:48 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/02/27 14:55:34 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:56:53 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 13:56:55 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static int	is_in_set(char const c, char const *s)

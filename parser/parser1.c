@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 10:35:02 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/09/11 10:35:03 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:26:10 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:01:35 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

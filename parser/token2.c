@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   token2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 08:52:48 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/23 08:52:49 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:28:26 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:03:33 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

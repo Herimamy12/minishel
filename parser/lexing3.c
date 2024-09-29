@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexing3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 14:07:51 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/09/10 14:08:02 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:25:49 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:01:28 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

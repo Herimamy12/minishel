@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 13:06:02 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/02/20 13:06:03 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:57:08 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 13:57:09 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_tolower(int c)

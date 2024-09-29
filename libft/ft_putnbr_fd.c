@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 14:07:49 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/02/22 14:07:50 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:53:38 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 13:53:39 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static void	putnbr(long int n, int fd)

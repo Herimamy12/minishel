@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_stream.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako@42antananarivo.mg <nirirako@      +#+  +:+       +#+        */
+/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 09:20:25 by nirirako@         #+#    #+#             */
-/*   Updated: 2024/08/27 09:20:40 by nirirako@        ###   ########.fr       */
+/*   Created: 2024/09/29 13:27:39 by nirirako          #+#    #+#             */
+/*   Updated: 2024/09/29 14:02:04 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
