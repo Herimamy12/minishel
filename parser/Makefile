@@ -1,6 +1,10 @@
 
 NAME = parse
 
+LIBNAME = libparser.a
+
+LIBNAME_BONUS = libparser_bonus.a
+
 BIN_SRC = main.c
 
 TAR_SRC = lexing0.c lexing1.c s_command1.c s_command.c s_here_doc.c\
@@ -53,16 +57,19 @@ clean:
 
 fclean: clean
 	make -C $(LIB) fclean
-	rm -rf $(NAME)
-	rm -rf libparser.a
+	rm -rf $(NAME) ${LIBNAME} ${LIBNAME_BONUS}
 
 re: fclean all
 
-tar: $(TAR_OBJ) $(TAR_OBJ1)
-	ar -rc libparser.a $(TAR_OBJ) $(TAR_OBJ1)
+tar : ${LIBNAME}
 
-tar_bonus: $(TAR_OBJ) $(TAR_BONUS_OBJ)
-	ar -rc libparser.a $(TAR_OBJ) $(TAR_BONUS_OBJ)
+${LIBNAME} : $(TAR_OBJ) $(TAR_OBJ1)
+	ar -rc $@ $(TAR_OBJ) $(TAR_OBJ1)
+
+tar_bonus : ${LIBNAME_BONUS}
+
+${LIBNAME_BONUS} : $(TAR_OBJ) $(TAR_BONUS_OBJ)
+	ar -rc $@ $(TAR_OBJ) $(TAR_BONUS_OBJ)
 
 test: $(NAME)
 	./parse
