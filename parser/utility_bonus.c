@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utility_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:29:01 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 14:02:44 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:24:00 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

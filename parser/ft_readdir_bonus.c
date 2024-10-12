@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readdir_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:25:26 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 14:01:18 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:22:59 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

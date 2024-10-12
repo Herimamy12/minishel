@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_token.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:28:13 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 14:02:16 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:23:46 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

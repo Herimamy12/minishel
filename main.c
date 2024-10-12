@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:32:43 by nherimam          #+#    #+#             */
-/*   Updated: 2024/09/29 13:32:45 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:24:14 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

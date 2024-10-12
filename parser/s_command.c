@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_command.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:26:17 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 14:01:38 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:23:15 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

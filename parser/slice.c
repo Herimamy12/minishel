@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   slice.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:27:11 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 14:02:32 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:23:52 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

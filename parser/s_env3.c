@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_env3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:26:48 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 14:01:52 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:23:25 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
