@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:48:37 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 13:57:56 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:25:36 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

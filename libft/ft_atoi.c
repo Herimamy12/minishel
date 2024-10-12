@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:48:24 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 13:57:49 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:25:33 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

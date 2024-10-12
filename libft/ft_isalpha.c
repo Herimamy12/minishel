@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:48:55 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 13:58:01 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:25:39 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:54:50 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 13:54:52 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:26:29 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

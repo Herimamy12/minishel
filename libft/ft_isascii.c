@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:49:07 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 13:58:03 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:25:40 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

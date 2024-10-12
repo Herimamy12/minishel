@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako < nirirako@student.42antananar    +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:49:42 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 13:58:08 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:25:42 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
