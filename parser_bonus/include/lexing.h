@@ -15,11 +15,13 @@
 # include "token.h"
 
 int			is_stream(enum e_token type);
-t_token *expand_wildcard(char *pattern);
-void	link_token(t_token *token);
+t_token		*expand_wildcard(char *pattern);
+void		link_token(t_token *token);
 int			check_syntax(t_token *token);
 int			expand_token(t_token *token, t_shell *sh);
 void		trim_token_type(t_token **token, enum e_token type_ref);
 void		unify_token(t_token *token);
 t_token		*lexicalize(t_token *token, t_shell *sh);
+void		handle_wildcard(t_token *new, t_token **ptr);
+int			is_word(enum e_token type);
 #endif

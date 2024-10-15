@@ -15,8 +15,8 @@
 
 static int	handle_word_quote(char *words, t_string **string)
 {
-	int	i;
-	char *str;
+	int		i;
+	char	*str;
 
 	i = 0;
 	while (words[i] && words[i] != '"')

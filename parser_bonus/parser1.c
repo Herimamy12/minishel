@@ -57,9 +57,9 @@ t_command	*parse_command(t_token *token)
 
 t_command	*command_parser(char *str_cmd, t_shell *sh)
 {
-	t_token	*token;
+	t_token		*token;
 	t_command	*cmd;
-	int		exit_code;
+	int			exit_code;
 
 	token = token_parser(str_cmd, sh, &exit_code);
 	cmd = parse_command(token);

@@ -1,9 +1,7 @@
 
 NAME = parse
 
-LIBNAME = libparser.a
-
-LIBNAME_BONUS = libparser_bonus.a
+LIBNAME = libparser_bonus.a
 
 BIN_SRC = main.c
 
@@ -11,12 +9,9 @@ TAR_SRC = lexing0.c lexing1.c s_command1.c s_command.c s_here_doc.c\
 		  s_env.c s_pipe.c s_shell.c s_stream.c s_string.c s_string1.c\
 		  s_token.c token1.c token2.c token3.c token4.c utility.c\
 		  utility1.c sig_handler.c s_env1.c s_env2.c lexing2.c parser.c\
-		  lexing3.c parser1.c s_env3.c 
-
-TAR_SRC1 = slice.c
-
-TAR_BONUS_SRC = ft_readdir_bonus.c s_file_bonus.c s_string_bonus.c slice.c\
-				wildcard_bonus.c utility_bonus.c
+		  lexing3.c parser1.c s_env3.c slice.c ft_readdir_bonus.c \
+		  s_file_bonus.c s_string_bonus.c wildcard_bonus.c \
+		  utility_bonus.c lexing4.c s_file_bonus1.c
 
 INCLUDE = include/
 
@@ -25,10 +20,6 @@ LIB = ../libft/
 OBJ_DIR = obj/
 
 TAR_OBJ = $(addprefix $(OBJ_DIR)/, $(TAR_SRC:%.c=%.o))
-
-TAR_OBJ1 = $(addprefix $(OBJ_DIR)/, $(TAR_SRC1:%.c=%.o))
-
-TAR_BONUS_OBJ = $(addprefix $(OBJ_DIR)/, $(TAR_BONUS_SRC:%.c=%.o))
 
 BIN_OBJ = $(addprefix $(OBJ_DIR)/, $(BIN_SRC:%.c=%.o))
 
@@ -63,13 +54,10 @@ re: fclean all
 
 tar : ${LIBNAME}
 
-${LIBNAME} : $(TAR_OBJ) $(TAR_OBJ1) $(TAR_BONUS_OBJ)
-	ar -rc $@ $(TAR_OBJ) $(TAR_OBJ1) $(TAR_BONUS_OBJ)
+${LIBNAME} : $(TAR_OBJ)
+	ar -rc $@ $(TAR_OBJ)
 
 tar_bonus : ${LIBNAME_BONUS}
-
-${LIBNAME_BONUS} : $(TAR_OBJ) $(TAR_BONUS_OBJ)
-	ar -rc $@ $(TAR_OBJ) $(TAR_BONUS_OBJ)
 
 test: $(NAME)
 	./parse

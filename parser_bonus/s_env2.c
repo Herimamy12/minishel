@@ -39,7 +39,7 @@ t_env	*dup_env_lst(t_env *env_lst)
 	while (env_lst)
 	{
 		insert_2_env_lst(ft_strdup(env_lst->name),
-			ft_strdup(env_lst->value), 3, &env);
+			ft_strdup(env_lst->value), env_lst->index, &env);
 		env_lst = env_lst->next;
 	}
 	return (env);
