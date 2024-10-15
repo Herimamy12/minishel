@@ -1,7 +1,5 @@
 NAME = minishell
 
-NAME_BONUS = minishell_bonus
-
 SRC = main.c
 
 LIB1 = libft/
@@ -26,8 +24,6 @@ IFLAGS = -I $(INCLUDE1) -I $(INCLUDE2) -I $(LIB1)
 
 LFLAGS = -L $(LIB1) -L $(LIB2) -L $(LIB3) -lexec -lparser -lft -lreadline
 
-BLFLAGS = -L $(LIB1) -L $(LIB2) -L $(LIB3) -lexec -lparser_bonus -lft -lreadline
-
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(addprefix $(OBJ_DIR), src)
 	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
@@ -39,16 +35,7 @@ $(NAME): $(OBJ)
 	make -C $(LIB3) tar
 	$(CC) -o $(NAME) $(OBJ) $(LFLAGS)
 
-${NAME_BONUS} : $(OBJ)
-	make -C $(LIB1)
-	make -C $(LIB1) bonus
-	make -C $(LIB2) tar_bonus
-	make -C $(LIB3) tar
-	$(CC) -o $(NAME_BONUS) $(OBJ) $(BLFLAGS)
-
 all: $(NAME)
-
-bonus : ${NAME_BONUS}
 
 clean:
 	make -C $(LIB1) clean

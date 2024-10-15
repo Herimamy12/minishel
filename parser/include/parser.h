@@ -15,9 +15,7 @@
 # include "lexing.h"
 # include "s_command.h"
 # include "utility.h"
-# include "ft_readdir.h"
 # include "sig_handler.h"
-# include "wildcard.h"
 # include <readline/readline.h>
 # include <readline/history.h>
 

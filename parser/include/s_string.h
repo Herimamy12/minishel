@@ -14,7 +14,6 @@
 # define S_STRING_H
 # include <stdlib.h>
 # include <stdio.h>
-# include "s_file.h"
 # include "libft.h"
 
 typedef struct s_string
@@ -33,6 +32,5 @@ char		*assemble(t_string *words);
 int			string_length(t_string *words);
 int			is_str_empty(t_string *string);
 int			is_str_whitespace(t_string *string);
-t_string	*file2str(t_file *file);
 void		insert_string(t_string **string, t_string *n);
 #endif
