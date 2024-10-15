@@ -52,12 +52,28 @@ static char	*get_target_dir(t_shell *sh, char **cmd)
 	return (str);
 }
 
+static void	update_pwd(t_shell *sh)
+{
+	char	buf[1000];
+	char	*tmp;
+	int		index;
+
+	index = get_index("OLDPWD", sh->env);
+	tmp = get_env_var_value(sh->env, "PWD");
+	if (does_env_var_exist("PWD", sh->env))
+		update_env_var("OLDPWD", tmp, &sh->env, index);
+	else
+		free(tmp);
+	getcwd(buf, 997);
+	tmp = ft_strdup(buf);
+	index = get_index("PWD", sh->env);
+	update_env_var("PWD", tmp, &sh->env, index);
+}
+
 int	handle_cd(char **cmd, t_shell *sh)
 {
 	char	*target_dir;
-	char	buf[1000];
-	char	*tmp;
-	
+
 	if (count_cd_arg(cmd) > 2)
 		return (cd_error(cmd[0]));
 	target_dir = get_target_dir(sh, cmd);
@@ -68,14 +84,7 @@ int	handle_cd(char **cmd, t_shell *sh)
 		free(target_dir);
 		return (EXIT_FAILURE);
 	}
-	tmp = get_env_var_value(sh->env, "PWD");
-	if (does_env_var_exist("PWD", sh->env))
-		update_env_var("OLDPWD", tmp, &sh->env, 3);
-	else
-		free(tmp);
-	getcwd(buf, 997);
-	tmp = ft_strdup(buf);
-	update_env_var("PWD", tmp, &sh->env, 3);
+	update_pwd(sh);
 	free(target_dir);
 	return (EXIT_SUCCESS);
 }

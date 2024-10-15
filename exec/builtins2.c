@@ -34,7 +34,7 @@ static int	print_export(t_env *env)
 	sort_env_lst(env_lst);
 	while (env_lst)
 	{
-		if (ft_strcmp(env_lst->name, "_"))
+		if (ft_strcmp(env_lst->name, "_") && env_lst->index != 5)
 		{
 			printf("declare -x %s", env_lst->name);
 			if (env_lst->value[0])

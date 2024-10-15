@@ -40,4 +40,6 @@ void	swap_env_lst_items(t_env *env1, t_env *env2);
 void	sort_env_lst(t_env *env);
 void	update_env_var(char *var_name, char *new_value, t_env **env, int index);
 int		does_env_var_exist(char *var_name, t_env *env);
+int		get_index(char *var_name, t_env *env);
+void	set_index(char *var_name, t_env *env, int index);
 #endif

@@ -25,10 +25,36 @@ int	does_env_var_exist(char *var_name, t_env *env)
 	return (0);
 }
 
+int	get_index(char *var_name, t_env *env)
+{
+	while (env)
+	{
+		if (!ft_strcmp(var_name, env->name))
+			return (env->index);
+		env = env->next;
+	}
+	return (5);
+}
+
+void	set_index(char *var_name, t_env *env, int index)
+{
+	while (env)
+	{
+		if (!ft_strcmp(var_name, env->name))
+		{
+			env->index = index;
+			break ;
+		}
+		env = env->next;
+	}
+}
+
 int	set_env_var(char *var_name, char *new_value, t_env *env, int index)
 {
 	if (index == -1 && does_env_var_exist(var_name, env))
 	{
+		if (!ft_strcmp("OLDPWD", var_name) || !ft_strcmp("PWD", var_name))
+			set_index(var_name, env, 3);
 		free(new_value);
 		return (1);
 	}
