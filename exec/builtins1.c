@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:24:06 by nherimam          #+#    #+#             */
-/*   Updated: 2024/09/29 13:24:13 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/10/15 09:42:56 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,7 @@ int	handle_cd(char **cmd, t_shell *sh)
 	char	*target_dir;
 	char	buf[1000];
 	char	*tmp;
-
-	getcwd(buf, 997);
+	
 	if (count_cd_arg(cmd) > 2)
 		return (cd_error(cmd[0]));
 	target_dir = get_target_dir(sh, cmd);
@@ -69,7 +68,7 @@ int	handle_cd(char **cmd, t_shell *sh)
 		free(target_dir);
 		return (EXIT_FAILURE);
 	}
-	tmp = ft_strdup(buf);
+	tmp = get_env_var_value(sh->env, "PWD");
 	if (does_env_var_exist("PWD", sh->env))
 		update_env_var("OLDPWD", tmp, &sh->env, 3);
 	else
