@@ -6,7 +6,7 @@
 /*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:29:01 by nirirako          #+#    #+#             */
-/*   Updated: 2024/10/12 08:24:00 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/16 09:15:07 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	match(char *input, char *pattern)
 		pattern++;
 	while (f && *input && *input != *pattern)
 		input++;
-	if (*input != *pattern)
+	if ((*pattern != 1 && *input != '*') && *input != *pattern)
 		return (0);
 	i = core_match(input, pattern);
 	input += i;

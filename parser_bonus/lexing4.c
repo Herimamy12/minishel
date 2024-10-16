@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lexing3.c                                          :+:      :+:    :+:   */
+/*   lexing4.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:25:49 by nirirako          #+#    #+#             */
-/*   Updated: 2024/10/14 10:36:51 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/16 09:14:09 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,15 @@
 static t_token	*file2token(t_file *f)
 {
 	t_token	*token;
+	char	*path_name;
 
 	token = NULL;
 	while (f)
 	{
-		append_token(&token, new_token(word, ft_strdup(f->path_name)));
+		path_name = f->path_name;
+		if (path_name[0] && path_name[1] && path_name[0] == '.' && path_name[1] == '/')
+			path_name += 2;
+		append_token(&token, new_token(word, ft_strdup(path_name)));
 		f = f->next;
 	}
 	return (token);
@@ -86,8 +90,8 @@ void	handle_wildcard(t_token *new, t_token **ptr)
 			token = expand_wildcard(new->value->words);
 			new = insert2chain(ptr, new, token);
 		}
-		else
-			unescape_char(new->value->words);
+		// else if (is_word(new->type))
+		// 	unescape_char(new->value->words);
 		new = new->next;
 	}
 }
