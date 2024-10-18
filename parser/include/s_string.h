@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_string.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:33:03 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 13:33:07 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/18 12:48:31 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define S_STRING_H
 # include <stdlib.h>
 # include <stdio.h>
-# include "s_file.h"
 # include "libft.h"
 
 typedef struct s_string
@@ -33,6 +32,5 @@ char		*assemble(t_string *words);
 int			string_length(t_string *words);
 int			is_str_empty(t_string *string);
 int			is_str_whitespace(t_string *string);
-t_string	*file2str(t_file *file);
 void		insert_string(t_string **string, t_string *n);
 #endif

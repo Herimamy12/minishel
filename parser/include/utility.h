@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utility.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nirirako <nirirako@student.42antanana      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:33:26 by nirirako          #+#    #+#             */
-/*   Updated: 2024/09/29 13:33:29 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/18 12:48:08 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ int		ft_is_output_stream(t_token *token);
 int		ft_is_whitespace(char c);
 int		ft_is_str_empty(char *str);
 int		is_quote_empty(char *str);
-int		match(char *input, char *pattern);
 void	ft_append_str(char **src, char *s);
 #endif
