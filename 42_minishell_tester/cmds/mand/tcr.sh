@@ -412,6 +412,23 @@ $??
 "$???"
 $HOME$PWD
 $PWD $HOME
+"$PWD $HOME"
+'$PWD' '$HOME'
+'$PWD " '$HOME"
+eof
+
+<<eof'' cat
+'abc'
+"abc"
+'def'"abc"
+$HOME
+$??
+"$???"
+$HOME$PWD
+$PWD $HOME
+"$PWD $HOME"
+'$PWD' '$HOME'
+'$PWD " '$HOME"
 eof
 
 <<eof'' cat
@@ -505,3 +522,15 @@ export USER="me"
 echo $"USER"
 
 
+unset PWD
+cd 
+echo $PWD $OLDPWD
+
+unset OLDPWD
+cd
+echo $PWD $OLDPWD
+
+unset PWD OLDPWD
+cd
+cd ..
+echo $PWD $OLDPWD
