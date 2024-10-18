@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
+/*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:24:06 by nherimam          #+#    #+#             */
-/*   Updated: 2024/09/29 13:24:13 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/10/18 12:32:21 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	handle_cd(char **cmd, t_shell *sh)
 	char	buf[1000];
 	char	*tmp;
 
-	getcwd(buf, 997);
 	if (count_cd_arg(cmd) > 2)
 		return (cd_error(cmd[0]));
 	target_dir = get_target_dir(sh, cmd);
@@ -69,11 +68,8 @@ int	handle_cd(char **cmd, t_shell *sh)
 		free(target_dir);
 		return (EXIT_FAILURE);
 	}
-	tmp = ft_strdup(buf);
-	if (does_env_var_exist("PWD", sh->env))
-		update_env_var("OLDPWD", tmp, &sh->env, 3);
-	else
-		free(tmp);
+	tmp = get_env_var_value(sh->env, "PWD");
+	update_env_var("OLDPWD", tmp, &sh->env, 3);
 	getcwd(buf, 997);
 	tmp = ft_strdup(buf);
 	update_env_var("PWD", tmp, &sh->env, 3);
