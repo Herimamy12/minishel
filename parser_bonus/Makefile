@@ -11,7 +11,7 @@ TAR_SRC = lexing0.c lexing1.c s_command1.c s_command.c s_here_doc.c\
 		  utility1.c sig_handler.c s_env1.c s_env2.c lexing2.c parser.c\
 		  lexing3.c parser1.c s_env3.c slice.c ft_readdir_bonus.c \
 		  s_file_bonus.c s_string_bonus.c wildcard_bonus.c \
-		  utility_bonus.c lexing4.c s_file_bonus1.c
+		  utility_bonus.c lexing4.c s_file_bonus1.c utility_bonus1.c
 
 INCLUDE = include/
 

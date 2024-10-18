@@ -6,7 +6,7 @@
 /*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:29:01 by nirirako          #+#    #+#             */
-/*   Updated: 2024/10/16 09:15:07 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/18 09:37:01 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ static int	core_match(char *input, char *pattern)
 	return (i);
 }
 
+static int	ft_equal(char i, char p)
+{
+	if (p == 1 && i == '*')
+		return (1);
+	return (i == p);
+}
+
 int	match(char *input, char *pattern)
 {
 	int	f;
@@ -58,9 +65,9 @@ int	match(char *input, char *pattern)
 	f = 0;
 	while (*pattern == '*' && ++f)
 		pattern++;
-	while (f && *input && *input != *pattern)
+	while (f && *input && !ft_equal(*input, *pattern))
 		input++;
-	if ((*pattern != 1 && *input != '*') && *input != *pattern)
+	if (!ft_equal(*input, *pattern))
 		return (0);
 	i = core_match(input, pattern);
 	input += i;
@@ -75,25 +82,4 @@ int	match(char *input, char *pattern)
 	while (f && *pattern != '*')
 		pattern--;
 	return (match(input, pattern));
-}
-
-void	ft_append_str(char **src, char *s)
-{
-	int		i;
-	char	*cp;
-	char	*ptr;
-
-	i = ft_strlen(*src) + ft_strlen(s) + 1;
-	cp = (char *)malloc(sizeof(char) * i);
-	ptr = cp;
-	if (!cp)
-	{
-		report_error("Malloc error in ft_append_str\n");
-		return ;
-	}
-	cp += ft_strlcpy(cp, *src, ft_strlen(*src) + 1);
-	cp += ft_strlcpy(cp, s, ft_strlen(s) + 1);
-	if (*src)
-		free(*src);
-	*src = ptr;
 }

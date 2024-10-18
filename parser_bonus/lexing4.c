@@ -6,7 +6,7 @@
 /*   By: nirirako <nirirako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:25:49 by nirirako          #+#    #+#             */
-/*   Updated: 2024/10/16 09:14:09 by nirirako         ###   ########.fr       */
+/*   Updated: 2024/10/18 09:34:48 by nirirako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ static t_token	*file2token(t_file *f)
 	while (f)
 	{
 		path_name = f->path_name;
-		if (path_name[0] && path_name[1] && path_name[0] == '.' && path_name[1] == '/')
+		if (path_name[0] && path_name[1] && path_name[0] == '.'
+			&& path_name[1] == '/')
 			path_name += 2;
 		append_token(&token, new_token(word, ft_strdup(path_name)));
 		f = f->next;
@@ -72,14 +73,16 @@ static t_token	*insert2chain(t_token **ptr, t_token *new, t_token *token)
 		token->next = tmp->next;
 	}
 	last_token(token)->next = tmp->next;
+	new = tmp->next;
 	tmp->next = NULL;
 	destroy_token(tmp);
-	return (token);
+	return (new);
 }
 
 void	handle_wildcard(t_token *new, t_token **ptr)
 {
 	t_token	*token;
+	t_token	*tmp;
 
 	link_token(new);
 	while (new)
@@ -87,11 +90,14 @@ void	handle_wildcard(t_token *new, t_token **ptr)
 		if (is_word(new->type) && ft_strchr(new->value->words, '*')
 			&& (!new->prev || (new->prev && !is_stream(new->prev->type))))
 		{
+			tmp = new->next;
 			token = expand_wildcard(new->value->words);
-			new = insert2chain(ptr, new, token);
+			insert2chain(ptr, new, token);
+			new = tmp;
 		}
-		// else if (is_word(new->type))
-		// 	unescape_char(new->value->words);
-		new = new->next;
+		else if (is_word(new->type))
+			unescape_char(new->value->words);
+		if (new)
+			new = new->next;
 	}
 }
