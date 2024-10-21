@@ -37,7 +37,7 @@ static char	*prompt(char *line, t_shell *sh, t_token **r_token)
 		else
 			sh->exit_code = 2;
 	}
-	return ("minishell> ");
+	return ("$> ");
 }
 
 static t_token	*handle_eof(t_token *token)
@@ -54,7 +54,7 @@ t_token	*prompt_user(t_shell *sh)
 	char	*p;
 
 	r_token = NULL;
-	p = "minishell> ";
+	p = "$> ";
 	line = NULL;
 	while (1)
 	{
