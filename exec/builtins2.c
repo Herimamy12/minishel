@@ -103,6 +103,8 @@ int	handle_export(t_shell *sh, char	**var)
 	{
 		if (exit_code == EXIT_SUCCESS)
 			exit_code = ft_export(sh, var[i]);
+		else
+			ft_export(sh, var[i]);
 		i++;
 	}
 	return (exit_code);
