@@ -28,7 +28,8 @@ static char	*prompt(char *line, t_shell *sh, t_token **r_token)
 	}
 	destroy_token(*r_token);
 	*r_token = NULL;
-	if (f && ft_strchr(line, '$') && !ft_strchr(line, '<'))
+	if (f && ft_strchr(line, '$') && !ft_strchr(line, '<')
+		&& !ft_strchr(line, '>'))
 		sh->exit_code = 0;
 	else
 	{
