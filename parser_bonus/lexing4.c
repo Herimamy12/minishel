@@ -68,10 +68,7 @@ static t_token	*insert2chain(t_token **ptr, t_token *new, t_token *token)
 		token->prev = new;
 	}
 	else
-	{
 		*ptr = token;
-		token->next = tmp->next;
-	}
 	last_token(token)->next = tmp->next;
 	new = tmp->next;
 	tmp->next = NULL;
