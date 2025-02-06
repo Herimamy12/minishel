@@ -9,7 +9,7 @@ MiniShell est une implémentation simplifiée d'un shell Unix, développée dans
 - Redirections d'entrée et de sortie (`>`, `>>`, `<`, `<<`).
 - Gestion des pipes (`|`).
 - Gestion des variables d'environnement.
-- Gestion des signaux (Ctrl+C, Ctrl+D, Ctrl+\).
+- Gestion des signaux (`Ctrl+C`, `Ctrl+D`, `Ctrl+\`).
 - Implémentation de certaines commandes internes (`cd`, `export`, `unset`, `env`, `exit`).
 
 ## Compilation et Exécution
